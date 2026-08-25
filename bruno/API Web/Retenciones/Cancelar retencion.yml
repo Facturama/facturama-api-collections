@@ -1,0 +1,29 @@
+info:
+  name: Cancelar retencion
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{SERVER}}/api/retenciones/z_CsaXGDSQfbqtsS39uQmg2?motive=02"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  params:
+    - name: motive
+      value: "02"
+      type: query
+  body:
+    type: json
+    data: ""
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

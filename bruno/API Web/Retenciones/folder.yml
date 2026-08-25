@@ -1,0 +1,11 @@
+info:
+  name: Retenciones
+  type: folder
+  seq: 7
+
+request:
+  auth: inherit
+
+docs:
+  content: "Documentación: [https://apisandbox.facturama.mx/guias/retenciones20](https://apisandbox.facturama.mx/guias/retenciones20)"
+  type: text/markdown

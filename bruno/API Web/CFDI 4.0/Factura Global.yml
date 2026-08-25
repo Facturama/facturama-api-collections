@@ -1,0 +1,127 @@
+info:
+  name: Factura Global
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"34\",\r
+
+      \    \"Folio\": \"100\",\r
+
+      \    \"Serie\": \"FAC\",\r
+
+      \    \"CfdiType\": \"I\",\r
+
+      \    \"Currency\": \"MXN\",\r
+
+      \    \"PaymentForm\": \"03\",\r
+
+      \    \"PaymentMethod\": \"PUE\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    \"Date\": \"2024-06-25T12:00:00\",\r
+
+      \    \"PaymentConditions\": \"CREDITO A SIETE DIAS\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    \"GlobalInformation\": {\r
+
+      \        \"Periodicity\": \"04\",\r
+
+      \        \"Months\": \"04\",\r
+
+      \        \"Year\": \"2024\"\r
+
+      \    },\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Rfc\": \"XAXX010101000\",\r
+
+      \        \"Name\": \"PUBLICO EN GENERAL\",\r
+
+      \        \"CfdiUse\": \"S01\",\r
+
+      \        \"TaxZipCode\": \"78000\",\r
+
+      \        \"FiscalRegime\": \"616\"\r
+
+      \    },\r
+
+      \    \"Items\": [\r
+
+      \        {\r
+
+      \            \"ProductCode\": \"10101504\",\r
+
+      \            \"IdentificationNumber\": \"EDL\",\r
+
+      \            \"Description\": \"Estudios de laboratorio\",\r
+
+      \            \"Unit\": \"NO APLICA\",\r
+
+      \            \"UnitCode\": \"MTS\",\r
+
+      \            \"UnitPrice\": 50,\r
+
+      \            \"Quantity\": 2.0,\r
+
+      \            \"Subtotal\": 100,\r
+
+      \            \"TaxObject\": \"02\",\r
+
+      \            \"Taxes\": [\r
+
+      \                {\r
+
+      \                    \"Total\": 16,\r
+
+      \                    \"Name\": \"IVA\",\r
+
+      \                    \"Base\": 100,\r
+
+      \                    \"Rate\": 0.16,\r
+
+      \                    \"IsRetention\": false\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Total\": 116\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Ceación / Emisión

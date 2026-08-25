@@ -1,0 +1,11 @@
+info:
+  name: Lugares de expedición
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit
+
+docs:
+  content: Sucursales
+  type: text/markdown

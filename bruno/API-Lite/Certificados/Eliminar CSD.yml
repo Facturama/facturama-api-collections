@@ -1,0 +1,26 @@
+info:
+  name: Eliminar CSD
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{SERVER}}/api-lite/csds/EKU9003173C9"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: multipart-form
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Elimina el CSD asociado con determinado RFC

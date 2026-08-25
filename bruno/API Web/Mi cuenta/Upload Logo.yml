@@ -1,0 +1,31 @@
+info:
+  name: Upload Logo
+  type: http
+  seq: 8
+
+http:
+  method: PUT
+  url: "{{SERVER}}/TaxEntity/UploadLogo"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"Image\": \"https://url_de_tu_logo.com/logo.png\",\r
+
+      \  \"Type\": \"png\"\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

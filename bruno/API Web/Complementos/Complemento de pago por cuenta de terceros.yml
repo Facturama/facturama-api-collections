@@ -1,0 +1,185 @@
+info:
+  name: Complemento de pago por cuenta de terceros
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"14\",\r
+
+      \    \"Folio\": \"1\",\r
+
+      \    \"Serie\": \"CP\",\r
+
+      \    \"CfdiType\": \"P\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    \"Date\": \"2024-06-25T12:00:00\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Rfc\": \"URE180429TM6\",\r
+
+      \        \"CfdiUse\": \"CP01\",\r
+
+      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
+
+      \        \"FiscalRegime\": \"601\",\r
+
+      \        \"TaxZipCode\": \"86991\"\r
+
+      \    },\r
+
+      \    \"Items\": [\r
+
+      \        {\r
+
+      \            \"Quantity\": \"1\",\r
+
+      \            \"ProductCode\": \"84111506\",\r
+
+      \            \"UnitCode\": \"ACT\",\r
+
+      \            \"Unit\": \"ACT\",\r
+
+      \            \"Description\": \"Pago\",\r
+
+      \            \"IdentificationNumber\": \"Servicios de facturación\",\r
+
+      \            \"UnitPrice\": \"0\",\r
+
+      \            \"Subtotal\": \"0\",\r
+
+      \            \"TaxObject\": \"01\",\r
+
+      \            \"Total\": \"0\",\r
+
+      \            \"Complement\": {\r
+
+      \                \"ThirdPartyAccount\": {\r
+
+      \                    \"Rfc\": \"CACX7605101P8\",\r
+
+      \                    \"Name\": \"XOCHILT CASAS CHAVEZ\",\r
+
+      \                    \"FiscalRegime\": \"616\",\r
+
+      \                    \"TaxZipCode\": \"36257\"\r
+
+      \                }\r
+
+      \            }\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"Complemento\": {\r
+
+      \        \"Payments\": [\r
+
+      \            {\r
+
+      \                \"Date\": \"2018-10-04\",\r
+
+      \                \"PaymentForm\": \"03\",\r
+
+      \                \"Amount\": \"116\",\r
+
+      \                \"OperationNumber\": \"126456\",\r
+
+      \                \"RelatedDocuments\": [\r
+
+      \                    {\r
+
+      \                        \"TaxObject\": \"02\",\r
+
+      \                        \"Uuid\": \"23361131-a0e0-4cf6-85d3-47f37679e874\",\r
+
+      \                        \"PartialityNumber\": \"1\",\r
+
+      \                        \"Serie\": \"1111\",\r
+
+      \                        \"Folio\": \"45\",\r
+
+      \                        \"Currency\": \"MXN\",\r
+
+      \                        \"PaymentMethod\": \"PPD\",\r
+
+      \                        \"PreviousBalanceAmount\": \"116\",\r
+
+      \                        \"AmountPaid\": \"111.75\",\r
+
+      \                        \"ImpSaldoInsoluto\": \"0\",\r
+
+      \                        \"Taxes\": [\r
+
+      \                            {\r
+
+      \                                \"Name\": \"IVA\",\r
+
+      \                                \"Rate\": \"0.16\",\r
+
+      \                                \"Total\": \"16\",\r
+
+      \                                \"Base\": \"100\",\r
+
+      \                                \"IsRetention\": \"false\"\r
+
+      \                            },\r
+
+      \                            {\r
+
+      \                                \"Name\": \"ISR\",\r
+
+      \                                \"Rate\": 0.0125,\r
+
+      \                                \"Total\": 1.25,\r
+
+      \                                \"Base\": 100.00,\r
+
+      \                                \"IsRetention\": true\r
+
+      \                            }\r
+
+      \                        ]\r
+
+      \                    }\r
+
+      \                ]\r
+
+      \            }\r
+
+      \        ]\r
+
+      \    }\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

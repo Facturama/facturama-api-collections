@@ -1,0 +1,137 @@
+info:
+  name: Leyendas Fiscales
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"21\",\r
+
+      \    \"Currency\": \"MXN\",\r
+
+      \    \"Folio\": \"200\",\r
+
+      \    \"Serie\": \"INE\",\r
+
+      \    \"CfdiType\": \"I\",\r
+
+      \    \"PaymentForm\": \"03\",\r
+
+      \    \"PaymentMethod\": \"PUE\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    \"Date\": \"2024-06-25T12:00:00\",\r
+
+      \    \"PaymentConditions\": \"Complemento Leyendas Fiscales\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
+
+      \        \"CfdiUse\": \"G03\",\r
+
+      \        \"Rfc\": \"URE180429TM6\",\r
+
+      \        \"FiscalRegime\": \"601\",\r
+
+      \        \"TaxZipCode\": \"86991\"\r
+
+      \    },\r
+
+      \    \"Items\": [\r
+
+      \        {\r
+
+      \            \"Quantity\": \"1\",\r
+
+      \            \"ProductCode\": \"10111302\",\r
+
+      \            \"UnitCode\": \"H87\",\r
+
+      \            \"Unit\": \"Pieza\",\r
+
+      \            \"Description\": \"Producto aseo prueba cfdi4.0\",\r
+
+      \            \"IdentificationNumber\": \"papc40\",\r
+
+      \            \"UnitPrice\": \"1.00\",\r
+
+      \            \"Subtotal\": \"1.00\",\r
+
+      \            \"TaxObject\": \"02\",\r
+
+      \            \"Taxes\": [\r
+
+      \                {\r
+
+      \                    \"Name\": \"IVA\",\r
+
+      \                    \"Rate\": \"0.16\",\r
+
+      \                    \"Total\": \"0.16\",\r
+
+      \                    \"Base\": \"1\",\r
+
+      \                    \"IsRetention\": \"false\",\r
+
+      \                    \"IsFederalTax\": \"true\"\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Total\": \"1.16\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"Complemento\": {\r
+
+      \        \"TaxLegends\": {\r
+
+      \            \"Legends\": [\r
+
+      \                {\r
+
+      \                    \"TaxProvision\": \"F0000001\",\r
+
+      \                    \"Norm\": \"F2654\",\r
+
+      \                    \"Text\": \"EXPORTADOR #####\"\r
+
+      \                }\r
+
+      \            ]\r
+
+      \        }\r
+
+      \    }\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

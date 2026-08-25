@@ -1,0 +1,75 @@
+info:
+  name: Agregar cliente IAÑL750210963
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{SERVER}}/Client"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \t\"Id\":\"\",\r
+
+      \t\"Rfc\": \"IAÑL750210963\",\r
+
+      \    \"Name\": \"LUIS IAN ÑUZCO\",\r
+
+      \    \"FiscalRegime\": \"605\",\r
+
+      \    \"Email\": \"api@ejemplo.mx\",\r
+
+      \    \"EmailOp1\" : \"ejemplo@ejemplo.com\",\r
+
+      \    \"CfdiUse\": \"D01\",\r
+
+      \    \"TaxResidence\": \"85256\",\r
+
+      \    \"NumRegIdTrib\": \"1314941055\",\r
+
+      \    \"TaxZipCode\": \"85256\",\r
+
+      \    \"Address\": \r
+
+      \t{\r
+
+      \        \"Street\": \"Calle de Pruebas\",\r
+
+      \        \"ExteriorNumber\": \"123\",\r
+
+      \        \"InteriorNumber\": \"456\",\r
+
+      \        \"Neighborhood\": \"Colonia de prueba\",\r
+
+      \        \"ZipCode\": \"85256\",\r
+
+      \        \"Locality\": \"SAN LUIS POTOSI\",\r
+
+      \        \"Municipality\": \"SAN LUIS POTOSI\",\r
+
+      \        \"State\": \"SAN LUIS POTOSI\",\r
+
+      \        \"Country\": \"Mex\"\r
+
+      \    }\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Agrega un cliente nuevo

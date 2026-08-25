@@ -1,0 +1,24 @@
+info:
+  name: Catálogo de Usos de Cfdi
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{SERVER}}/catalogs/CfdiUses"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Usos de que se le puede dar a la factura

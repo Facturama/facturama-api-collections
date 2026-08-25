@@ -1,0 +1,24 @@
+info:
+  name: Eliminar cliente
+  type: http
+  seq: 10
+
+http:
+  method: DELETE
+  url: "{{SERVER}}/Client/3PTFRSde-Oxq2kDVqsSQsA2"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: multipart-form
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

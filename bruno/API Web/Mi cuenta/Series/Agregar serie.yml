@@ -1,0 +1,35 @@
+info:
+  name: Agregar serie
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{SERVER}}/api/serie/LX_AzPIieK7GdbXjqItHGg2"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: |-
+      {
+      	"IdBranchOffice": "LX_AzPIieK7GdbXjqItHGg2",
+      	"Name": "INV",
+      	"Description": "Para el control de inventarios",
+      	"Folio": 200
+      }
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Agrega una serie a una sucursal

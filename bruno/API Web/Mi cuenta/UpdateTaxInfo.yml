@@ -1,0 +1,63 @@
+info:
+  name: UpdateTaxInfo
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{SERVER}}/taxentity"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"FiscalRegime\": \"601\",\r
+
+      \    \"ComercialName\": null,\r
+
+      \    \"Rfc\": \"EKU9003173C9\",\r
+
+      \    \"TaxName\": \"ESCUELA KEMPER URGATE\",\r
+
+      \    \"Email\": \"soporte-api@ejemplo.mx\",\r
+
+      \    \"OptionalEmail\": \"soporte-api@ejemplo.mx\",\r
+
+      \    \"TaxAddress\": {\r
+
+      \        \"Street\": \"Del mar\",\r
+
+      \        \"ExteriorNumber\": \"44\",\r
+
+      \        \"InteriorNumber\": \"\",\r
+
+      \        \"Neighborhood\": \"Miramar\",\r
+
+      \        \"ZipCode\": \"26015\",\r
+
+      \        \"Locality\": \"Hermosillo\",\r
+
+      \        \"Municipality\": \"Hermosillo\",\r
+
+      \        \"State\": \"Sonora\",\r
+
+      \        \"Country\": \"MEXICO\"\r
+
+      \    }\r
+
+      }\r
+
+      \    "
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

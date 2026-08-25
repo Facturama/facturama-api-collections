@@ -1,0 +1,28 @@
+info:
+  name: Catálogo de Estados
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{SERVER}}/catalogs/States?countryCode=MEX"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  params:
+    - name: countryCode
+      value: MEX
+      type: query
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Listado de paises válidos

@@ -1,0 +1,7 @@
+info:
+  name: Productos ó servicios
+  type: folder
+  seq: 3
+
+request:
+  auth: inherit

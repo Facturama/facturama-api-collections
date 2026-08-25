@@ -1,0 +1,123 @@
+info:
+  name: Complemento de donativos
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{SERVER}}/api-lite/3/cfdis"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"9\",\r
+
+      \    \"Currency\": \"MXN\",\r
+
+      \    \"Folio\": \"100\",\r
+
+      \    \"Serie\": \"DONST\",\r
+
+      \    \"CfdiType\": \"I\",\r
+
+      \    \"PaymentForm\": \"03\",\r
+
+      \    \"PaymentMethod\": \"PUE\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    \"Date\": \"2024-02-20T12:00:00\",\r
+
+      \    \"PaymentConditions\": \"DONATIVO\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"LogoUrl\": \"http:tu_dominio.com/imagen.jpg\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    \"Complemento\": {\r
+
+      \        \"Donation\": {\r
+
+      \            \"AuthorizationDate\": \"30/01/2019\",\r
+
+      \            \"AuthorizationNumber\": \"B400-05-08-2014-005\",\r
+
+      \            \"Legend\": \"El comprobante es un donativo\"\r
+
+      \        }\r
+
+      \    },\r
+
+      \    \"Items\": [\r
+
+      \        {\r
+
+      \            \"Description\": \"Cobija de lana y algodon\",\r
+
+      \            \"ProductCode\": \"20102000\",\r
+
+      \            \"IdentificationNumber\": \"FP114\",\r
+
+      \            \"Quantity\": \"3\",\r
+
+      \            \"Subtotal\": \"3000\",\r
+
+      \            \"Total\": \"3000\",\r
+
+      \            \"Unit\": \"NO APLICA\",\r
+
+      \            \"UnitCode\": \"EA\",\r
+
+      \            \"UnitPrice\": \"1000\",\r
+
+      \            \"TaxObject\": \"01\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Rfc\": \"CACX7605101P8\",\r
+
+      \        \"CfdiUse\": \"D04\",\r
+
+      \        \"Name\": \"XOCHILT CASAS CHAVEZ\",\r
+
+      \        \"FiscalRegime\": \"605\",\r
+
+      \        \"TaxZipCode\": \"36257\"\r
+
+      \    },\r
+
+      \    \"Issuer\": {\r
+
+      \        \"Rfc\": \"EKU9003173C9\",\r
+
+      \        \"Name\": \"ESCUELA KEMPER URGATE\",\r
+
+      \        \"FiscalRegime\": \"601\"\r
+
+      \    }\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

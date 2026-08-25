@@ -1,0 +1,126 @@
+info:
+  name: Complemento Hidrocarburos
+  type: http
+  seq: 18
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  body:
+    type: json
+    data: "{\t    \r
+
+      \    \"NameId\": \"1\",\r
+
+      \    \"Currency\": \"MXN\",\r
+
+      \    \"Folio\": \"100\",\r
+
+      \    //\"Serie\": \"HDC\",\r
+
+      \    \"CfdiType\": \"I\",\r
+
+      \    \"PaymentForm\": \"03\",\r
+
+      \    \"PaymentMethod\": \"PUE\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    //\"Date\": \"2024-06-25T12:00:00\",\r
+
+      \    \"PaymentConditions\": \"CREDITO A SIETE DIAS\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    \"Issuer\": {\r
+
+      \        \"FiscalRegime\": \"601\",\r
+
+      \        \"Rfc\": \"EKU9003173C9\",\r
+
+      \        \"Name\": \"ESCUELA KEMPER URGATE\"\r
+
+      \    },\r
+
+      \t\"Receiver\": {\r
+
+      \t\t\"Rfc\": \"URE180429TM6\",\r
+
+      \t\t\"CfdiUse\": \"G03\",\r
+
+      \t\t\"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
+
+      \        \"FiscalRegime\": \"601\",\r
+
+      \        \"TaxZipCode\" : \"86991\"\t\r
+
+      \t},\r
+
+      \t\"Items\": [{        \r
+
+      \t\t\"ProductCode\": \"15101505\",\r
+
+      \t\t\"Description\": \"Combustible\",\r
+
+      \t\t\"UnitCode\": \"LTR\",\r
+
+      \t\t\"Quantity\": 1.0,\r
+
+      \t\t\"UnitPrice\": 100.0,\r
+
+      \t\t\"Subtotal\": 100.00,\r
+
+      \        \"TaxObject\" : \"02\",\r
+
+      \t\t\"Taxes\": [{\r
+
+      \t\t\t\"Total\": 16,\r
+
+      \            \"Name\": \"IVA\",\r
+
+      \            \"Base\": 100,\r
+
+      \            \"Rate\": 0.16,\r
+
+      \            \"IsRetention\": false\r
+
+      \t\t}],\r
+
+      \t\t\"Total\": 116,\r
+
+      \        \"Complement\":{\r
+
+      \            \"HidroYPetro\":{\r
+
+      \                \"Version\": 1.0,\r
+
+      \                \"TipoPermiso\":\"PER03\",\r
+
+      \                \"NumeroPermiso\": \"PL/364/DIS/OM/2015\",\r
+
+      \                \"ClaveHYP\": \"Item15101505\",\r
+
+      \                \"SubProductoHYP\": \"SP22\"\r
+
+      \            }\r
+
+      \        }\r
+
+      \t}]\t\r
+
+      }"
+  auth:
+    type: basic
+    username: sdkpruebas
+    password: "{{auth_password_0ugg}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

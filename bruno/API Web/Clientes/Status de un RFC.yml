@@ -1,0 +1,33 @@
+info:
+  name: Status de un RFC
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{SERVER}}/Client/status?rfc=EKU9003173C9"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  params:
+    - name: rfc
+      value: EKU9003173C9
+      type: query
+  body:
+    type: json
+    data: ""
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Agrega un cliente nuevo

@@ -1,0 +1,35 @@
+info:
+  name: Status CFDI
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{SERVER}}/cfdi/status/?uuid=27568D31-7E57-442F-BA77-798CBF30BD7D&issuerRfc=CACX7605101P8&receiverRfc=FUNK671228PH6&total=11000.00"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  params:
+    - name: uuid
+      value: 27568D31-7E57-442F-BA77-798CBF30BD7D
+      type: query
+    - name: issuerRfc
+      value: CACX7605101P8
+      type: query
+    - name: receiverRfc
+      value: FUNK671228PH6
+      type: query
+    - name: total
+      value: "11000.00"
+      type: query
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

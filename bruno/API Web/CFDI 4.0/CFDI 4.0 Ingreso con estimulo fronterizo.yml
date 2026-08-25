@@ -1,0 +1,127 @@
+info:
+  name: CFDI 4.0 Ingreso con estimulo fronterizo
+  type: http
+  seq: 16
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"1\",\r
+
+      \    \"Folio\": \"100\",\r
+
+      \    \"CfdiType\": \"I\",\r
+
+      \    \"Currency\": \"MXN\",\r
+
+      \    \"PaymentForm\": \"30\",\r
+
+      \    \"PaymentMethod\": \"PUE\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"21000\",\r
+
+      \    \"Date\": \"2025-06-16T10:55:02\",\r
+
+      \    \"Observations\": \"Ejemplo de IVA 8%\",\r
+
+      \    \"PaymentConditions\": \"No aplica\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    // Sólo necesario para API Multiemisor\r
+
+      \    \"Issuer\": {     \r
+
+      \        \"Rfc\": \"XIQB891116QE4\",\r
+
+      \        \"Name\": \"BERENICE XIMO QUEZADA\",\r
+
+      \        \"FiscalRegime\": \"605\"\r
+
+      \    },\r
+
+      \r
+
+      \    \"Receiver\": \r
+
+      \    {\r
+
+      \        \"Rfc\": \"URE180429TM6\",\r
+
+      \        \"CfdiUse\": \"G02\",\r
+
+      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
+
+      \        \"FiscalRegime\": \"601\",\r
+
+      \        \"TaxZipCode\": \"86991\"\r
+
+      \    },\r
+
+      \    \"Items\": [\r
+
+      \        {\r
+
+      \            \"ProductCode\": \"10101500\",\r
+
+      \            \"Description\": \"Animales vivos de granja\",\r
+
+      \            \"Unit\": \"NO APLICA\",\r
+
+      \            \"UnitCode\": \"ACT\",\r
+
+      \            \"UnitPrice\": 100,\r
+
+      \            \"Quantity\": 1.0,\r
+
+      \            \"Subtotal\": 100,\r
+
+      \            \"TaxObject\": \"02\",\r
+
+      \            \"Taxes\": [\r
+
+      \                {\r
+
+      \                    \"Total\": 8,\r
+
+      \                    \"Name\": \"IVA\",\r
+
+      \                    \"Base\": 100,\r
+
+      \                    \"Rate\": 0.08,\r
+
+      \                    \"IsRetention\": false\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Total\": 108\r
+
+      \        }\r
+
+      \    ]"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Ceación / Emisión

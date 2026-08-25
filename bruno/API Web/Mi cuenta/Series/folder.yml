@@ -1,0 +1,11 @@
+info:
+  name: Series
+  type: folder
+  seq: 2
+
+request:
+  auth: inherit
+
+docs:
+  content: Agrupaciones de folios, que permiten agrupar por concptos
+  type: text/markdown

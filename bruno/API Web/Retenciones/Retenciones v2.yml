@@ -1,0 +1,113 @@
+info:
+  name: Retenciones v2
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{SERVER}}/2/retenciones"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"FolioInt\": \"0001\",\r
+
+      \    \"FechaExp\": \"2024-04-17T12:00:01\",\r
+
+      \    \"CveRetenc\": \"01\",\r
+
+      \    \"LugarExpRetenc\": \"78000\",\r
+
+      \    \"Emisor\": {\r
+
+      \        \"RFCEmisor\": \"EKU9003173C9\",\r
+
+      \        \"NomDenRazSocE\": \"ESCUELA KEMPER URGATE\",\r
+
+      \        \"RegimenFiscalE\": \"601\"\r
+
+      \    },\r
+
+      \    \"Receptor\": {\r
+
+      \        \"Nacionalidad\": \"Nacional\",\r
+
+      \        \"Nacional\": {\r
+
+      \            \"RFCRecep\": \"CACX7605101P8\",\r
+
+      \            \"NomDenRazSocR\": \"XOCHILT CASAS CHAVEZ\",\r
+
+      \            \"DomicilioFiscalR\": \"36257\"\r
+
+      \        }\r
+
+      \    },\r
+
+      \    \"Periodo\": {\r
+
+      \        \"MesIni\": \"01\",\r
+
+      \        \"MesFin\": \"01\",\r
+
+      \        \"Ejerc\": \"2023\"\r
+
+      \    },\r
+
+      \    \"Totales\": {\r
+
+      \        \"montoTotOperacion\": \"1681.06\",\r
+
+      \        \"montoTotGrav\": \"1681.06\",\r
+
+      \        \"montoTotExent\": \"0.00\",\r
+
+      \        \"montoTotRet\": \"151.29\",\r
+
+      \        \"ImpRetenidos\": [\r
+
+      \            {\r
+
+      \                \"BaseRet\": \"1681.06\",\r
+
+      \                \"Impuesto\": \"01\",\r
+
+      \                \"MontoRet\": \"16.81\",\r
+
+      \                \"TipoPagoRet\": \"04\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"BaseRet\": \"268.96\",\r
+
+      \                \"Impuesto\": \"02\",\r
+
+      \                \"MontoRet\": \"134.48\",\r
+
+      \                \"TipoPagoRet\": \"01\"\r
+
+      \            }\r
+
+      \        ]\r
+
+      \    }\r
+
+      \    \r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

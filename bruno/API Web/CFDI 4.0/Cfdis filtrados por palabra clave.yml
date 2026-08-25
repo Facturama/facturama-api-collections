@@ -1,0 +1,32 @@
+info:
+  name: Cfdis filtrados por palabra clave
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{SERVER}}/cfdi?type=Issued&keyword=Expresion&status=Active"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  params:
+    - name: type
+      value: Issued
+      type: query
+    - name: keyword
+      value: Expresion
+      type: query
+    - name: status
+      value: Active
+      type: query
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,149 @@
+info:
+  name: CFDI 4.0 kits
+  type: http
+  seq: 19
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"1\",\r
+
+      \    \"Currency\": \"MXN\",\r
+
+      \    \"Folio\": \"100\",\r
+
+      \    \"Serie\": \"KITS\",\r
+
+      \    \"CfdiType\": \"I\",\r
+
+      \    \"PaymentForm\": \"03\",\r
+
+      \    \"PaymentMethod\": \"PUE\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    \"Date\": \"2026-04-07T10:14:52\",\r
+
+      \    \"PaymentConditions\": \"CREDITO A SIETE DIAS\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Rfc\": \"URE180429TM6\",\r
+
+      \        \"CfdiUse\": \"G01\",\r
+
+      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
+
+      \        \"FiscalRegime\": \"601\",\r
+
+      \        \"TaxZipCode\": \"86991\"\r
+
+      \    },\r
+
+      \    \"Items\": [\r
+
+      \        {\r
+
+      \            \"ProductCode\": \"27113201\",\r
+
+      \            \"Description\": \"Conjuntos generales de herramientas\",\r
+
+      \            \"UnitCode\": \"KT\",\r
+
+      \            \"Quantity\": 2,\r
+
+      \            \"UnitPrice\": 2000,\r
+
+      \            \"Subtotal\": 4000,\r
+
+      \            \"TaxObject\":\"02\",\r
+
+      \            \"Taxes\": [\r
+
+      \                {\r
+
+      \                    \"Total\": 640,\r
+
+      \                    \"Name\": \"IVA\",\r
+
+      \                    \"Base\": 4000,\r
+
+      \                    \"Rate\": 0.16,\r
+
+      \                    \"IsRetention\": false\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Parts\": [\r
+
+      \                {\r
+
+      \                    \"Quantity\": 20,\r
+
+      \                    \"UnitCode\": \"H87\",\r
+
+      \                    \"ProductCode\": \"41116401\",\r
+
+      \                    \"IdentificationNumber\": \"4\",\r
+
+      \                    \"Description\": \"Martillos de impacto\",\r
+
+      \                    \"UnitPrice\": 100\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"Quantity\": 8,\r
+
+      \                    \"UnitCode\": \"H87\",\r
+
+      \                    \"ProductCode\": \"27111701\",\r
+
+      \                    \"IdentificationNumber\": \"56jy\",\r
+
+      \                    \"Description\": \"Destornillador\",\r
+
+      \                    \"UnitPrice\": 250\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Total\": 4640\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Ceación / Emisión

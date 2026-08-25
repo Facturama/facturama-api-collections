@@ -1,0 +1,135 @@
+info:
+  name: Complemento concepto por cuenta de terceros
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{SERVER}}/api-lite/3/cfdis"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"1\",\r
+
+      \    \"Currency\": \"MXN\",\r
+
+      \    \"Folio\": \"100\",\r
+
+      \    \"Serie\": \"FA\",\r
+
+      \    \"CfdiType\": \"I\",\r
+
+      \    \"PaymentForm\": \"03\",\r
+
+      \    \"PaymentMethod\": \"PUE\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    \"Date\": \"2024-02-20T12:00:00\",\r
+
+      \    \"PaymentConditions\": \"Por cuenta de terceros\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"LogoUrl\": \"http:tu_dominio.com/imagen.jpg\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    \"Issuer\": {\r
+
+      \        \"Rfc\": \"EKU9003173C9\",\r
+
+      \        \"Name\": \"ESCUELA KEMPER URGATE\",\r
+
+      \        \"FiscalRegime\": \"601\"\r
+
+      \    },\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Rfc\": \"URE180429TM6\",\r
+
+      \        \"CfdiUse\": \"G03\",\r
+
+      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
+
+      \        \"FiscalRegime\": \"601\",\r
+
+      \        \"TaxZipCode\": \"86991\"        \r
+
+      \    },\r
+
+      \    \"Items\": [\r
+
+      \        {\r
+
+      \            \"ProductCode\": \"25173108\",\r
+
+      \            \"Description\": \"GPS estandar pruebas\",\r
+
+      \            \"UnitCode\": \"E48\",\r
+
+      \            \"Quantity\": 1.0,\r
+
+      \            \"UnitPrice\": 100.0,\r
+
+      \            \"Subtotal\": 100.00,\r
+
+      \            \"TaxObject\": \"02\",\r
+
+      \            \"ThirdPartyAccount\": {\r
+
+      \                \"Rfc\": \"CACX7605101P8\",\r
+
+      \                \"Name\": \"XOCHILT CASAS CHAVEZ\",\r
+
+      \                \"FiscalRegime\": \"616\",\r
+
+      \                \"TaxZipCode\": \"36257\"\r
+
+      \            },\r
+
+      \            \"Taxes\": [\r
+
+      \                {\r
+
+      \                    \"Total\": 16,\r
+
+      \                    \"Name\": \"IVA\",\r
+
+      \                    \"Base\": 100,\r
+
+      \                    \"Rate\": 0.16,\r
+
+      \                    \"IsRetention\": false\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Total\": 116\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,75 @@
+info:
+  name: Agregar producto con IVA ISR
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{SERVER}}/Product"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"Unit\": \"Servicio\",\r
+
+      \    \"UnitCode\": \"E48\",\r
+
+      \    \"IdentificationNumber\": \"WEB003\",\r
+
+      \    \"Name\": \"Sitio Web CMS\",\r
+
+      \    \"Description\": \"Producto con IVA ISR\",\r
+
+      \    \"Price\": 999.9999,\r
+
+      \    \"CodeProdServ\": \"43232408\",\r
+
+      \    \"ObjetoImp\": \"02\",\r
+
+      \    \"Taxes\": [\r
+
+      \        {\r
+
+      \            \"Name\": \"IVA\",\r
+
+      \            \"Rate\": 0.16,\r
+
+      \            \"IsRetention\": false,\r
+
+      \            \"IsFederalTax\": true\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"Name\": \"ISR\",\r
+
+      \            \"Rate\": \"0.03\",\r
+
+      \            \"IsRetention\": true,\r
+
+      \            \"IsFederalTax\": true\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Permite agregar un elemento al catálogo de productos

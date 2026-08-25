@@ -1,0 +1,123 @@
+info:
+  name: CFDI Arrendamiento
+  type: http
+  seq: 24
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"10\",\r
+
+      \    \"Currency\": \"MXN\",\r
+
+      \    \"Folio\": \"100\",\r
+
+      \    \"Serie\": \"FAC\",\r
+
+      \    \"CfdiType\": \"I\",\r
+
+      \    \"PaymentForm\": \"03\",\r
+
+      \    \"PaymentMethod\": \"PUE\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    \"Date\": \"2024-06-25T12:00:00\",\r
+
+      \    \"PaymentConditions\": \"CFDI de Arrendamiento\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Rfc\": \"URE180429TM6\",\r
+
+      \        \"CfdiUse\": \"G01\",\r
+
+      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
+
+      \        \"FiscalRegime\": \"601\",\r
+
+      \        \"TaxZipCode\": \"86991\"\r
+
+      \    },\r
+
+      \    \"Items\": [\r
+
+      \        {\r
+
+      \            \"ProductCode\": \"80131500\",\r
+
+      \            \"IdentificationNumber\": \"Renta2023\",\r
+
+      \            \"Description\": \"renta Mensual\",\r
+
+      \            \"Unit\": \"Unidad de servicio\",\r
+
+      \            \"UnitCode\": \"E48\",\r
+
+      \            \"UnitPrice\": 1500,\r
+
+      \            \"Quantity\": 1.0,\r
+
+      \            \"Subtotal\": 1500,\r
+
+      \            \"TaxObject\": \"02\",\r
+
+      \            \"Taxes\": [\r
+
+      \                {\r
+
+      \                    \"Total\": 240,\r
+
+      \                    \"Name\": \"IVA\",\r
+
+      \                    \"Base\": 1500,\r
+
+      \                    \"Rate\": 0.16,\r
+
+      \                    \"IsRetention\": false\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Total\": 1740.00,\r
+
+      \            \"PropertyTaxIDNumber\": [\r
+
+      \                \"123456789\"\r
+
+      \            ]\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Ceación / Emisión

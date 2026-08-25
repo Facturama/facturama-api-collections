@@ -1,0 +1,135 @@
+info:
+  name: Nota de Credito
+  type: http
+  seq: 27
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"2\",\r
+
+      \    \"Currency\": \"MXN\",\r
+
+      \    \"Folio\": \"100\",\r
+
+      \    \"Serie\": \"NDC\",\r
+
+      \    \"CfdiType\": \"E\",\r
+
+      \    \"PaymentForm\": \"03\",\r
+
+      \    \"PaymentMethod\": \"PUE\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    \"Date\": \"2024-06-25T12:00:00\",\r
+
+      \    \"PaymentConditions\": \"Nota de credito\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Rfc\": \"URE180429TM6\",\r
+
+      \        \"CfdiUse\": \"G01\",\r
+
+      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
+
+      \        \"FiscalRegime\": \"601\",\r
+
+      \        \"TaxZipCode\": \"86991\"\r
+
+      \    },\r
+
+      \    \"Relations\": {\r
+
+      \        \"Type\": \"07\",\r
+
+      \        \"Cfdis\": [\r
+
+      \            {\r
+
+      \                \"Uuid\": \"45ab1a98-1709-446a-8759-e45a8d76b557\"\r
+
+      \            }\r
+
+      \        ]\r
+
+      \    },\r
+
+      \    \"Items\": [\r
+
+      \        {\r
+
+      \            \"Quantity\": \"1\",\r
+
+      \            \"ProductCode\": \"86121500\",\r
+
+      \            \"UnitCode\": \"E48\",\r
+
+      \            \"Unit\": \"Unidad de servicio\",\r
+
+      \            \"Description\": \"Pago inicial del 50% por el desarrollo del sitio web personal.\",\r
+
+      \            \"IdentificationNumber\": \"980000\",\r
+
+      \            \"UnitPrice\": \"500.00\",\r
+
+      \            \"Subtotal\": \"500.00\",\r
+
+      \            \"TaxObject\": \"02\",\r
+
+      \            \"Taxes\": [\r
+
+      \                {\r
+
+      \                    \"Name\": \"IVA\",\r
+
+      \                    \"Rate\": \"0.16\",\r
+
+      \                    \"Total\": \"80\",\r
+
+      \                    \"Base\": \"500\",\r
+
+      \                    \"IsRetention\": \"false\",\r
+
+      \                    \"IsFederalTax\": \"false\"\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Total\": \"580.00\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Ceación / Emisión

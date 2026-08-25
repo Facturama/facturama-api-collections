@@ -1,0 +1,16 @@
+info:
+  name: Certificados
+  type: folder
+  seq: 2
+
+request:
+  auth: inherit
+
+docs:
+  content: |-
+    Tambien llamados CSD (Certificado de Sello Digital).
+
+    Son necesarios para hacer el timbrado (Validación de la factura ante el SAT).
+
+    Y se requiere uno para cada RFC con el que se desee facturar
+  type: text/markdown

@@ -1,0 +1,37 @@
+info:
+  name: Cancelar Cfdi
+  type: http
+  seq: 28
+
+http:
+  method: DELETE
+  url: "{{SERVER}}/Cfdi/_l0qPog2qSpryRUq1qfCrg2?type=issued&motive=02"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  params:
+    - name: type
+      value: issued
+      type: query
+    - name: motive
+      value: "02"
+      type: query
+    - name: uuidReplacement
+      value: ""
+      type: query
+      disabled: true
+  body:
+    type: multipart-form
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Los CFDI no se pueden eliminar, solo se cancelan

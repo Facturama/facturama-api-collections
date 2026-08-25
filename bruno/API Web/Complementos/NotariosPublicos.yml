@@ -1,0 +1,269 @@
+info:
+  name: NotariosPublicos
+  type: http
+  seq: 16
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \r
+
+      \    // datos generales de la factura\r
+
+      \    \"NameId\": \"25\",\r
+
+      \    \"Currency\": \"MXN\",\r
+
+      \    \"Folio\": \"100\",\r
+
+      \    \"Serie\": \"FAC\",\r
+
+      \    \"CfdiType\": \"I\",\r
+
+      \    \"Decimals\": \"2\",\r
+
+      \    \"PaymentForm\": \"03\",\r
+
+      \    \"PaymentMethod\": \"PUE\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    \"Date\": \"2024-06-25T12:00:00\",\r
+
+      \    \"PaymentConditions\": \"CREDITO A SIETE DIAS\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \r
+
+      \r
+
+      // Datos del Receptor\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Name\": \"ESCUELA KEMPER URGATE\",\r
+
+      \        \"CfdiUse\": \"G01\",\r
+
+      \        \"Rfc\": \"EKU9003173C9\",\r
+
+      \        \"FiscalRegime\": \"601\",\r
+
+      \        \"TaxZipCode\": \"42501\"\r
+
+      \    },\r
+
+      \r
+
+      // Conceptos\r
+
+      \    \"Items\": [\r
+
+      \        {\r
+
+      \            \"Quantity\": \"1\",\r
+
+      \            \"ProductCode\": \"95101603\",\r
+
+      \            \"UnitCode\": \"E48\",\r
+
+      \            \"Unit\": \"Unidad de servicio\",\r
+
+      \            \"Description\": \"sitio centro comercial\",\r
+
+      \            \"IdentificationNumber\": \"sitiocomercial\",\r
+
+      \            \"UnitPrice\": \"10.00\",\r
+
+      \            \"Subtotal\": \"10.00\",\r
+
+      \            \"TaxObject\": \"02\",\r
+
+      \            \"Taxes\": [\r
+
+      \                {\r
+
+      \                    \"Name\": \"IVA\",\r
+
+      \                    \"Rate\": \"0.16\",\r
+
+      \                    \"Total\": \"1.6\",\r
+
+      \                    \"Base\": \"10\",\r
+
+      \                    \"IsRetention\": \"false\",\r
+
+      \                    \"IsFederalTax\": \"true\"\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Total\": \"11.60\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    // Informacion del complemento Notarios Publicos. \r
+
+      \    \"Complemento\": {\r
+
+      \        \"NotariosPublicos\": {\r
+
+      \            \"Version\": \"1.0\",\r
+
+      \            \"DatosOperacion\": {\r
+
+      \                \"NumInstrumentoNotarial\": \"1234\",\r
+
+      \                \"FechaInstNotarial\": \"14/05/2022\",\r
+
+      \                \"MontoOperacion\": \"10\",\r
+
+      \                \"Subtotal\": \"10\",\r
+
+      \                \"IVA\": \"1\"\r
+
+      \            },\r
+
+      \            \"DatosNotario\": {\r
+
+      \                \"CURP\": \"XEXX010101HNEXXXA4\",\r
+
+      \                \"NumNotaria\": \"12\",\r
+
+      \                \"EntidadFederativa\": \"24\",\r
+
+      \                \"Adscripcion\": \"\"\r
+
+      \            },\r
+
+      \            \"DescInmuebles\": [\r
+
+      \                {\r
+
+      \                    \"TipoInmueble\": \"01\",\r
+
+      \                    \"Calle\": \"calle\",\r
+
+      \                    \"Municipio\": \"slp\",\r
+
+      \                    \"Estado\": \"24\",\r
+
+      \                    \"Pais\": \"MEX\",\r
+
+      \                    \"CodigoPostal\": \"78000\"\r
+
+      \                }\r
+
+      \            ],// Un enajenate\r
+
+      \            \"DatosEnajenante\": {\r
+
+      \                \"CoproSocConyugalE\": \"No\",\r
+
+      \                \"Item\": {\r
+
+      \                    \"Nombre\": \"juan\",\r
+
+      \                    \"ApellidoPaterno\": \"hernandez\",\r
+
+      \                    \"RFC\": \"CACX7605101P8\",\r
+
+      \                    \"CURP\": \"XEXX010101HNEXXXA4\"\r
+
+      \                }\r
+
+      \            },\r
+
+      \            /* varios enajenantes en soc.\r
+
+      \            \"DatosEnajenante\": {\r
+
+      \                \"CoproSocConyugalE\": \"Si\",\r
+
+      \                \"Item\": {\r
+
+      \                    \"DatosEnajenanteCopSC\": [\r
+
+      \                        {\r
+
+      \                            \"Nombre\": \"juan\",\r
+
+      \                            \"ApellidoPaterno\": \"hernandez\",\r
+
+      \                            \"RFC\": \"KCACX7605101P8\",\r
+
+      \                            \"CURP\": \"XEXX010101HNEXXXA4\",\r
+
+      \                            \"Porcentaje\": 10\r
+
+      \                        },\r
+
+      \                        {\r
+
+      \                            \"Nombre\": \"juan\",\r
+
+      \                            \"ApellidoPaterno\": \"hernandez\",\r
+
+      \                            \"RFC\": \"CACX7605101P8\",\r
+
+      \                            \"CURP\": \"XEXX010101HNEXXXA4\",\r
+
+      \                            \"Porcentaje\": 10\r
+
+      \                        }\r
+
+      \                        ]\r
+
+      \                }\r
+
+      \            },*/\r
+
+      \            \"DatosAdquiriente\": {\r
+
+      \                \"CoproSocConyugalE\": \"No\",\r
+
+      \                \"Item\": {\r
+
+      \                    \"Nombre\": \"juan\",\r
+
+      \                    \"ApellidoPaterno\": \"hernandez\",\r
+
+      \                    \"RFC\": \"CACX7605101P8\",\r
+
+      \                    \"CURP\": \"XEXX010101HNEXXXA4\"\r
+
+      \                }\r
+
+      \            }\r
+
+      \        }\r
+
+      \    }\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

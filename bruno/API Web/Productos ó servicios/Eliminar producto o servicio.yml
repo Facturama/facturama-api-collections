@@ -1,0 +1,24 @@
+info:
+  name: Eliminar producto o servicio
+  type: http
+  seq: 8
+
+http:
+  method: DELETE
+  url: "{{SERVER}}/Product/rTRHF583IKUdi3yw2sYwrw2"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: multipart-form
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

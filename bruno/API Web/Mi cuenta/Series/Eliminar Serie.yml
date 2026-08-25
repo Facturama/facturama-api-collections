@@ -1,0 +1,26 @@
+info:
+  name: Eliminar Serie
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: "{{SERVER}}/api/serie/LX_AzPIieK7GdbXjqItHGg2/INV"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: multipart-form
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Elimina una serie asociada con determinada sucursal. En el caso de que la serie exista en otras sucursales, no se verán afectadas.

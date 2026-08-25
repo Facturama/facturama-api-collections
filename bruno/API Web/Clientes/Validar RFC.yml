@@ -1,0 +1,37 @@
+info:
+  name: Validar RFC
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{SERVER}}/customers/validate"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"Rfc\": \"EKU9003173C9\",\r
+
+      \    \"Name\": \"ESCUELA KEMPER URGATE\",\r
+
+      \    \"ZipCode\": \"42501\", // Return False\r
+
+      \    //\"ZipCode\": \"26015\", // Return True\r
+
+      \    \"FiscalRegime\": \"601\"\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

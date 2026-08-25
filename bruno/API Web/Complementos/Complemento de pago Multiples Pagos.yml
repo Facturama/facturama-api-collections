@@ -1,0 +1,171 @@
+info:
+  name: Complemento de pago Multiples Pagos
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"14\",\r
+
+      \    \"Folio\": \"1\",\r
+
+      \    \"Serie\": \"CP\",\r
+
+      \    \"CfdiType\": \"P\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    \"Date\": \"2024-06-25T12:00:00\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Rfc\": \"URE180429TM6\",\r
+
+      \        \"CfdiUse\": \"CP01\",\r
+
+      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
+
+      \        \"FiscalRegime\": \"601\",\r
+
+      \        \"TaxZipCode\": \"86991\"\r
+
+      \    },\r
+
+      \    \"Complemento\": {\r
+
+      \        \"Payments\": [\r
+
+      \            {\r
+
+      \                \"Date\": \"2018-10-04\",\r
+
+      \                \"PaymentForm\": \"03\",\r
+
+      \                \"Amount\": \"12040.82\",\r
+
+      \                \"Currency\": \"MXN\",\r
+
+      \                \"RelatedDocuments\": [\r
+
+      \                    {\r
+
+      \                        \"TaxObject\": \"02\",\r
+
+      \                        \"Uuid\": \"23361131-a0e0-4cf6-85d3-47f37679e874\",\r
+
+      \                        \"Serie\": \"BQ\",\r
+
+      \                        \"Folio\": \"2205\",\r
+
+      \                        \"Currency\": \"USD\",\r
+
+      \                        \"EquivalenceDocRel\": 0.049,\r
+
+      \                        \"PaymentMethod\": \"PUE\",\r
+
+      \                        \"PartialityNumber\": \"1\",\r
+
+      \                        \"PreviousBalanceAmount\": \"1160.00\",\r
+
+      \                        \"AmountPaid\": \"580.00\",\r
+
+      \                        \"ImpSaldoInsoluto\": \"580.00\",\r
+
+      \                        \"Taxes\": [\r
+
+      \                            {\r
+
+      \                                \"Total\": 80,\r
+
+      \                                \"Name\": \"IVA\",\r
+
+      \                                \"Base\": 500,\r
+
+      \                                \"Rate\": 0.160000,\r
+
+      \                                \"IsRetention\": false\r
+
+      \                            }\r
+
+      \                        ]\r
+
+      \                    },\r
+
+      \                    {\r
+
+      \                        \"TaxObject\": \"02\",\r
+
+      \                        \"Uuid\": \"23361131-a0e0-4cf6-85d3-47f37679e874\",\r
+
+      \                        \"Serie\": \"BQ\",\r
+
+      \                        \"Folio\": \"2206\",\r
+
+      \                        \"Currency\": \"MXN\",\r
+
+      \                        \"EquivalenceDocRel\": 1,\r
+
+      \                        \"PaymentMethod\": \"PUE\",\r
+
+      \                        \"PartialityNumber\": \"1\",\r
+
+      \                        \"PreviousBalanceAmount\": \"204.08\",\r
+
+      \                        \"AmountPaid\": \"204.08\",\r
+
+      \                        \"ImpSaldoInsoluto\": \"0.00\",\r
+
+      \                        \"Taxes\": [\r
+
+      \                            {\r
+
+      \                                \"Total\": 1.60,\r
+
+      \                                \"Name\": \"IVA\",\r
+
+      \                                \"Base\": 10,\r
+
+      \                                \"Rate\": 0.160000,\r
+
+      \                                \"IsRetention\": false\r
+
+      \                            }\r
+
+      \                        ]\r
+
+      \                    }\r
+
+      \                ]\r
+
+      \            }\r
+
+      \        ]\r
+
+      \    }\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

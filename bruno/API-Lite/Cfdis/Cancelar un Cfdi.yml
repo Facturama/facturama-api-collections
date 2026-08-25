@@ -1,0 +1,33 @@
+info:
+  name: Cancelar un Cfdi
+  type: http
+  seq: 9
+
+http:
+  method: DELETE
+  url: "{{SERVER}}/api-lite/cfdis/0L864p3ksJ3MjWf3or242g2"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  params:
+    - name: motive
+      value: "02"
+      type: query
+      disabled: true
+    - name: uuidReplacement
+      value: ""
+      type: query
+      disabled: true
+  body:
+    type: multipart-form
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

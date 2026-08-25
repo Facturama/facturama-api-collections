@@ -1,0 +1,257 @@
+info:
+  name: Comercio Exterior
+  type: http
+  seq: 15
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"26\",\r
+
+      \    \"Currency\": \"MXN\",\r
+
+      \    \"Folio\": \"100\",\r
+
+      \    \"Serie\": \"COMEXT\",\r
+
+      \    \"CfdiType\": \"I\",\r
+
+      \    \"PaymentForm\": \"03\",\r
+
+      \    \"PaymentMethod\": \"PUE\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    \"Date\": \"2023-04-10T12:55:02-06:00\",\r
+
+      \    \"PaymentConditions\": \"CREDITO A SIETE DIAS\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"Exportation\": \"02\",\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Rfc\": \"XEXX010101000\",\r
+
+      \        \"Name\": \"Nombre cliente extrangero\",\r
+
+      \        \"CfdiUse\": \"S01\",\r
+
+      \        \"FiscalRegime\": \"616\",\r
+
+      \        \"TaxZipCode\": \"78000\",\r
+
+      \        \"TaxRegistrationNumber\": \"123456789\", \r
+
+      \        \"TaxResidence\": \"USA\"\r
+
+      \        \r
+
+      \    },\r
+
+      \   \"Items\": [{ \r
+
+      \            \"IdentificationNumber\": \"CX-000988\",\r
+
+      \      \t    \"Quantity\": \"1\",\r
+
+      \      \t    \"ProductCode\": \"41106300\",\r
+
+      \      \t    \"UnitCode\": \"EA\",\r
+
+      \            \"Unit\": \"PIEZA\",\r
+
+      \            \"Description\": \"ABACO\",\r
+
+      \            \"UnitPrice\": \"100\",\r
+
+      \            \"Subtotal\": \"100.00\",\r
+
+      \            \"TaxObject\": \"02\",\r
+
+      \            \"Taxes\": [{\r
+
+      \                \"Name\": \"IVA\",\r
+
+      \                \"Rate\": \"0.16\",\r
+
+      \                \"Total\": \"16\",\r
+
+      \                \"Base\": \"100\",\r
+
+      \                \"IsRetention\": \"false\"\r
+
+      \            }],\r
+
+      \            \"Total\": \"116.00\"\r
+
+      \        },\r
+
+      \    \t{\r
+
+      \            \"Quantity\": \"1\",\r
+
+      \            \"ProductCode\": \"41106300\",\r
+
+      \            \"UnitCode\": \"EA\",\r
+
+      \            \"Unit\": \"PIEZA\",\r
+
+      \            \"Description\": \" ABACO\",\r
+
+      \            \"UnitPrice\": \"100\",\r
+
+      \            \"Subtotal\": \"100.00\",\r
+
+      \            \"IdentificationNumber\": \"CX-000988\",\r
+
+      \            \"TaxObject\": \"02\",\r
+
+      \            \"Taxes\": [{\r
+
+      \                \"Name\": \"IVA\",\r
+
+      \                \"Rate\": \"0.16\",\r
+
+      \                \"Total\": \"16\",\r
+
+      \                \"Base\": \"100\",\r
+
+      \                \"IsRetention\": \"false\"\r
+
+      \             }],\r
+
+      \             \"Total\": \"116.00\"\r
+
+      \        }],\r
+
+      \     \"Complemento\": {\r
+
+      \            \"ForeignTrade\": {\r
+
+      \                \"Issuer\": {\r
+
+      \                    \"Address\": {\r
+
+      \                        \"Street\": \"Cañada de Gomez\",\r
+
+      \                        \"ExteriorNumber\": \"110\",\r
+
+      \                        \"InteriorNumber\": \"A\",\r
+
+      \                        \"Reference\": \"-\",\r
+
+      \                        \"Municipality\": \"028\",\r
+
+      \                        \"State\": \"SLP\",\r
+
+      \                        \"Country\": \"MEX\",\r
+
+      \                        \"ZipCode\": \"78216\"\r
+
+      \                    }\r
+
+      \                },\r
+
+      \                \"Receiver\": {\r
+
+      \                    \"Address\": {\r
+
+      \                        \"Street\": \"Cañada de Gomez\",\r
+
+      \                        \"ExteriorNumber\": \"110\",\r
+
+      \                        \"InteriorNumber\": \"A\",\r
+
+      \                        \"Neighborhood\": \"0939\",\r
+
+      \                        \"Locality\": \"ABC\",\r
+
+      \                        \"Municipality\": \"028\",\r
+
+      \                        \"State\": \"NT\", \r
+
+      \                        \"Country\": \"CAN\", \r
+
+      \                        \"ZipCode\": \"M3C 0C1\"\r
+
+      \                    }\r
+
+      \                },\r
+
+      \                \"Commodity\": [{\r
+
+      \                    \"SpecificDescriptions\": [{\r
+
+      \                        \"Brand\": \"Volkswagen\",\r
+
+      \                         \"Model\": \"Polo\",\r
+
+      \                         \"SubModel\": \"GTI\",\r
+
+      \                         \"SerialNumber\": \"4556789542156\"\r
+
+      \                    }],\r
+
+      \                    \"IdentificationNumber\": \"CX-000988\",\r
+
+      \                    \"TariffFraction\": \"7308900200\",\r
+
+      \                    \"CustomsQuantity\": \"1\",\r
+
+      \                    \"CustomsUnit\": \"01\",\r
+
+      \                    \"CustomsUnitValue\": \"10.60\"\r
+
+      \                }],\r
+
+      \                \"OperationType\": \"2\",\r
+
+      \                \"RequestCode\": \"A1\",\r
+
+      \                \"OriginCertificate\": \"true\",\r
+
+      \                \"Incoterm\": \"CFR\",\r
+
+      \                \"Subdivision\": 1,\r
+
+      \                \"ExchangeRateUSD\": \"18.3323\",\r
+
+      \                \"TotalUSD\": \"1\",\r
+
+      \                \"OriginCertificateNumber\": \"20001000000300022817\",\r
+
+      \                \"ReliableExporterNumber\": null,\r
+
+      \                \"Observations\": \"sample string 8\"\r
+
+      \            }\r
+
+      \        }\r
+
+      \    }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Ceación / Emisión

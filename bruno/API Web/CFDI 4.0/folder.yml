@@ -1,0 +1,7 @@
+info:
+  name: CFDI 4.0
+  type: folder
+  seq: 6
+
+request:
+  auth: inherit

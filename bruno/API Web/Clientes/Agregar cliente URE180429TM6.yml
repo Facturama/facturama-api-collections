@@ -1,0 +1,75 @@
+info:
+  name: Agregar cliente URE180429TM6
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{SERVER}}/Client"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \t\"Id\":\"\",\r
+
+      \t\"Rfc\": \"URE180429TM6\",\r
+
+      \    \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
+
+      \    \"FiscalRegime\": \"601\",\r
+
+      \    \"Email\": \"api@ejemplo.mx\",\r
+
+      \    \"EmailOp1\" : \"ejemplo@ejemplo.com\",\r
+
+      \    \"CfdiUse\": \"G03\",\r
+
+      \    \"TaxResidence\": \"86991\",\r
+
+      \    \"NumRegIdTrib\": \"131494-1055\",\r
+
+      \    \"TaxZipCode\": \"86991\",\r
+
+      \    \"Address\": \r
+
+      \t{\r
+
+      \        \"Street\": \"Calle de Pruebas\",\r
+
+      \        \"ExteriorNumber\": \"123\",\r
+
+      \        \"InteriorNumber\": \"456\",\r
+
+      \        \"Neighborhood\": \"Colonia de prueba\",\r
+
+      \        \"ZipCode\": \"86991\",\r
+
+      \        \"Locality\": \"SAN LUIS POTOSI\",\r
+
+      \        \"Municipality\": \"SAN LUIS POTOSI\",\r
+
+      \        \"State\": \"SAN LUIS POTOSI\",\r
+
+      \        \"Country\": \"Mex\"\r
+
+      \    }\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Agrega un cliente nuevo

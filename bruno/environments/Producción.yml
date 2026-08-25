@@ -1,0 +1,12 @@
+name: Producción
+color: "#CE4F3B"
+variables:
+  - name: SERVER
+    value: https://api.facturama.mx
+    description: ""
+  - name: UserName
+    value: ""
+    description: ""
+  - secret: true
+    name: Password
+    description: ""

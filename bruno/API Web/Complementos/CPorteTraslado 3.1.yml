@@ -1,0 +1,305 @@
+info:
+  name: CPorteTraslado 3.1
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"36\",\r
+
+      \    \"Currency\": \"MXN\",\r
+
+      \    \"Folio\": \"1\",\r
+
+      \    \"Serie\": \"CCP\",\r
+
+      \    \"CfdiType\": \"T\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    \"Date\": \"2024-06-25T12:00:00\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Rfc\": \"EKU9003173C9\",\r
+
+      \        \"Name\": \"ESCUELA KEMPER URGATE\",\r
+
+      \        \"CfdiUse\": \"S01\",\r
+
+      \        \"FiscalRegime\": \"601\",\r
+
+      \        \"TaxZipCode\": \"42501\"\r
+
+      \    },\r
+
+      \    \"Items\": [\r
+
+      \        {\r
+
+      \            \"ProductCode\": \"78101800\",\r
+
+      \            \"Description\": \"Transporte de carga por carretera\",\r
+
+      \            \"IdentificationNumber\": \"1123\",\r
+
+      \            \"UnitCode\": \"E48\",\r
+
+      \            \"UnitPrice\": 0,\r
+
+      \            \"Quantity\": 1,\r
+
+      \            \"Subtotal\": 0,\r
+
+      \            \"TaxObject\": \"01\",\r
+
+      \            \"Total\": 0\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"Complemento\": {\r
+
+      \        \"CartaPorte31\": {\r
+
+      \            \"Version\": \"3.1\",\r
+
+      \            \"IdCCP\": \"CCCBCD94-870A-4332-A52A-A52AA52AA52A\",\r
+
+      \            \"TranspInternac\": \"No\",\r
+
+      \            \"TotalDistRec\": \"1\",\r
+
+      \            \"RegistroISTMO\": \"Sí\",\r
+
+      \            \"UbicacionPoloOrigen\": \"01\",\r
+
+      \            \"UbicacionPoloDestino\": \"01\",\r
+
+      \            \"Ubicaciones\": [\r
+
+      \                {\r
+
+      \                    \"TipoUbicacion\": \"Origen\",\r
+
+      \                    \"IDUbicacion\": \"OR101010\",\r
+
+      \                    \"RFCRemitenteDestinatario\": \"EKU9003173C9\",\r
+
+      \                    \"NombreRemitenteDestinatario\": \"NombreRemitenteDestinatario1\",\r
+
+      \                    \"FechaHoraSalidaLlegada\": \"2023-08-01T00:00:00\",\r
+
+      \                    \"Domicilio\": {\r
+
+      \                        \"Calle\": \"Calle1\",\r
+
+      \                        \"NumeroExterior\": \"211\",\r
+
+      \                        \"NumeroInterior\": \"212\",\r
+
+      \                        \"Colonia\": \"1957\",\r
+
+      \                        \"Localidad\": \"13\",\r
+
+      \                        \"Referencia\": \"casa blanca\",\r
+
+      \                        \"Municipio\": \"011\",\r
+
+      \                        \"Estado\": \"CMX\",\r
+
+      \                        \"Pais\": \"MEX\",\r
+
+      \                        \"CodigoPostal\": \"13250\"\r
+
+      \                    }\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"TipoUbicacion\": \"Destino\",\r
+
+      \                    \"IDUbicacion\": \"DE202020\",\r
+
+      \                    \"RFCRemitenteDestinatario\": \"EKU9003173C9\",\r
+
+      \                    \"NombreRemitenteDestinatario\": \"NombreRemitenteDestinatario2\",\r
+
+      \                    \"FechaHoraSalidaLlegada\": \"2023-08-01T00:00:01\",\r
+
+      \                    \"DistanciaRecorrida\": \"1\",\r
+
+      \                    \"Domicilio\": {\r
+
+      \                        \"Calle\": \"Calle2\",\r
+
+      \                        \"NumeroExterior\": \"214\",\r
+
+      \                        \"NumeroInterior\": \"215\",\r
+
+      \                        \"Colonia\": \"0347\",\r
+
+      \                        \"Localidad\": \"23\",\r
+
+      \                        \"Referencia\": \"casa negra\",\r
+
+      \                        \"Municipio\": \"004\",\r
+
+      \                        \"Estado\": \"COA\",\r
+
+      \                        \"Pais\": \"MEX\",\r
+
+      \                        \"CodigoPostal\": \"25350\"\r
+
+      \                    }\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Mercancias\": {\r
+
+      \                \"PesoBrutoTotal\": \"1.0\",\r
+
+      \                \"UnidadPeso\": \"XBX\",\r
+
+      \                \"NumTotalMercancias\": \"1\",\r
+
+      \                \"LogisticaInversaRecoleccionDevolucion\": \"Sí\",\r
+
+      \                \"Mercancia\": [\r
+
+      \                    {\r
+
+      \                        \"BienesTransp\": \"11121900\",\r
+
+      \                        \"Descripcion\": \"Accesorios de equipo de telefonía\",\r
+
+      \                        \"Cantidad\": \"1.0\",\r
+
+      \                        \"ClaveUnidad\": \"XBX\",\r
+
+      \                        \"MaterialPeligroso\": \"No\",\r
+
+      \                        \"PesoEnKg\": \"1\",\r
+
+      \                        \"DenominacionGenericaProd\": \"DenominacionGenericaProd1\",\r
+
+      \                        \"DenominacionDistintivaProd\": \"DenominacionDistintivaProd1\",\r
+
+      \                        \"Fabricante\": \"Fabricante1\",\r
+
+      \                        \"FechaCaducidad\": \"2028-01-01\",\r
+
+      \                        \"LoteMedicamento\": \"LoteMedic1\",\r
+
+      \                        \"RegistroSanitarioFolioAutorizacion\": \"RegistroSanita1\",\r
+
+      \                        \"CantidadTransporta\": [\r
+
+      \                            {\r
+
+      \                                \"Cantidad\": \"1\",\r
+
+      \                                \"IDOrigen\": \"OR101010\",\r
+
+      \                                \"IDDestino\": \"DE202020\"\r
+
+      \                            }\r
+
+      \                        ]\r
+
+      \                    }\r
+
+      \                ],\r
+
+      \                \"Autotransporte\": {\r
+
+      \                    \"PermSCT\": \"TPAF01\",\r
+
+      \                    \"NumPermisoSCT\": \"NumPermisoSCT1\",\r
+
+      \                    \"IdentificacionVehicular\": {\r
+
+      \                        \"ConfigVehicular\": \"VL\",\r
+
+      \                        \"PesoBrutoVehicular\": \"1\",\r
+
+      \                        \"PlacaVM\": \"plac892\",\r
+
+      \                        \"AnioModeloVM\": \"2020\"\r
+
+      \                    },\r
+
+      \                    \"Seguros\": {\r
+
+      \                        \"AseguraRespCivil\": \"AseguraRespCivil\",\r
+
+      \                        \"PolizaRespCivil\": \"123456789\"\r
+
+      \                    },\r
+
+      \                    \"Remolques\": [\r
+
+      \                        {\r
+
+      \                            \"SubTipoRem\": \"CTR004\",\r
+
+      \                            \"Placa\": \"VL45K98\"\r
+
+      \                        }\r
+
+      \                    ]\r
+
+      \                }\r
+
+      \            },\r
+
+      \            \"FiguraTransporte\": [\r
+
+      \                {\r
+
+      \                    \"TipoFigura\": \"01\",\r
+
+      \                    \"NombreFigura\": \"NombreFigura\",\r
+
+      \                    \"RFCFigura\": \"EKU9003173C9\",\r
+
+      \                    \"NumLicencia\": \"a234567890\"\r
+
+      \                }\r
+
+      \            ]\r
+
+      \        }\r
+
+      \    }\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

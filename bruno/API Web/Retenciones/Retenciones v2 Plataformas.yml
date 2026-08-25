@@ -1,0 +1,173 @@
+info:
+  name: Retenciones v2 Plataformas
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{SERVER}}/2/retenciones"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"FolioInt\": \"0001\",\r
+
+      \    \"FechaExp\": \"2024-04-17T12:00:01\",\r
+
+      \    \"CveRetenc\": \"26\",\r
+
+      \    \"LugarExpRetenc\": \"78180\",\r
+
+      \    \"Emisor\": {\r
+
+      \        \"RFCEmisor\": \"EKU9003173C9\",\r
+
+      \        \"NomDenRazSocE\": \"ESCUELA KEMPER URGATE\",\r
+
+      \        \"RegimenFiscalE\": \"601\"\r
+
+      \    },\r
+
+      \    \"Receptor\": {\r
+
+      \        \"Nacionalidad\": \"Nacional\",\r
+
+      \        \"Nacional\": {\r
+
+      \            \"RFCRecep\": \"CACX7605101P8\",\r
+
+      \            \"NomDenRazSocR\": \"XOCHILT CASAS CHAVEZ\",\r
+
+      \            \"DomicilioFiscalR\": \"36257\"\r
+
+      \        }\r
+
+      \    },\r
+
+      \    \"Periodo\": {\r
+
+      \        \"MesIni\": \"01\",\r
+
+      \        \"MesFin\": \"01\",\r
+
+      \        \"Ejerc\": \"2024\"\r
+
+      \    },\r
+
+      \    \"Totales\": {\r
+
+      \        \"montoTotOperacion\": \"1681.06\",\r
+
+      \        \"montoTotGrav\": \"1681.06\",\r
+
+      \        \"montoTotExent\": \"0.00\",\r
+
+      \        \"montoTotRet\": \"151.29\",\r
+
+      \        \"ImpRetenidos\": [\r
+
+      \            {\r
+
+      \                \"BaseRet\": \"1681.06\",\r
+
+      \                \"Impuesto\": \"01\",\r
+
+      \                \"MontoRet\": \"16.81\",\r
+
+      \                \"TipoPagoRet\": \"03\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"BaseRet\": \"268.96\",\r
+
+      \                \"Impuesto\": \"02\",\r
+
+      \                \"MontoRet\": \"134.48\",\r
+
+      \                \"TipoPagoRet\": \"01\"\r
+
+      \            }\r
+
+      \        ]\r
+
+      \    },\r
+
+      \    \"Complemento\": {\r
+
+      \        \"ServiciosPlataformasTecnologicas\": {\r
+
+      \            \"Servicios\": [\r
+
+      \                {\r
+
+      \                    \"ImpuestosTrasladadosdelServicio\": {\r
+
+      \                        \"Base\": \"1681.06\",\r
+
+      \                        \"Impuesto\": \"02\",\r
+
+      \                        \"TipoFactor\": \"Tasa\",\r
+
+      \                        \"TasaCuota\": \"0.160000\",\r
+
+      \                        \"Importe\": \"268.9696\"\r
+
+      \                    },\r
+
+      \                    \"ComisionDelServicio\": {\r
+
+      \                        \"Base\": \"1681.06\",\r
+
+      \                        \"Importe\": \"14.66\"\r
+
+      \                    },\r
+
+      \                    \"FormaPagoServ\": \"02\",\r
+
+      \                    \"TipoDeServ\": \"05\",\r
+
+      \                    \"FechaServ\": \"2024-01-01\",\r
+
+      \                    \"PrecioServSinIva\": \"1681.06\"\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Periodicidad\": \"02\",\r
+
+      \            \"NumServ\": 1,\r
+
+      \            \"MontToServSIva\": \"1681.06\",\r
+
+      \            \"TotalIvaTrasladado\": \"268.9696\",\r
+
+      \            \"TotalIvaRetenido\": \"134.48\",\r
+
+      \            \"TotalIsrRetenido\": \"16.81\",\r
+
+      \            \"DifIvaEntregadoPrestServ\": \"134.4896\",\r
+
+      \            \"MonTotalporUsoPlataforma\": \"14.66\"\r
+
+      \        }\r
+
+      \    }\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

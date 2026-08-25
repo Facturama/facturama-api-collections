@@ -1,0 +1,28 @@
+info:
+  name: Catálogo de unidades
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{SERVER}}/Catalogs/Units?keyword=18"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  params:
+    - name: keyword
+      value: "18"
+      type: query
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Catálogo de unidades del SAT

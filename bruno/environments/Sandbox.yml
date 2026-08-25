@@ -1,0 +1,12 @@
+name: Sandbox
+color: "#2E8A54"
+variables:
+  - name: SERVER
+    value: https://apisandbox.facturama.mx
+    description: ""
+  - name: UserName
+    value: ""
+    description: ""
+  - secret: true
+    name: Password
+    description: ""

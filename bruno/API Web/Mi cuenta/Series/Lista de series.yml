@@ -1,0 +1,24 @@
+info:
+  name: Lista de series
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{SERVER}}/api/serie/LX_AzPIieK7GdbXjqItHGg2"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Obitiene la lista de series asociadas a determimado lugar de expedición / sucursal

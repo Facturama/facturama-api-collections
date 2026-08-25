@@ -1,0 +1,167 @@
+info:
+  name: Nomina
+  type: http
+  seq: 19
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \t\"NameId\": 16,\r
+
+      \t\"ExpeditionPlace\": \"78000\",\r
+
+      \t\"Folio\": 1,\r
+
+      \t\"CfdiType\": \"N\",\t\r
+
+      \t\"PaymentMethod\": \"PUE\",\t\r
+
+      \    \"Date\": \"2024-06-25T12:00:00\",\r
+
+      \t\"Receiver\": {\r
+
+      \t\t\"Rfc\": \"FUNK671228PH6\",\r
+
+      \t\t\"CfdiUse\": \"CN01\",\r
+
+      \t\t\"Name\": \"KARLA FUENTE NOLASCO\",\r
+
+      \        \"FiscalRegime\": \"605\",\r
+
+      \        \"TaxZipCode\" : \"01160\"\r
+
+      \t},\r
+
+      \t\"Complemento\": {\r
+
+      \t\t\"Payroll\": {\r
+
+      \t\t\t\"Type\": \"O\",\r
+
+      \t\t\t\"DailySalary\": 0.00,\r
+
+      \t\t\t\"BaseSalary\": 0.00,\r
+
+      \t\t\t\"PaymentDate\": \"2019-09-06\",\r
+
+      \t\t\t\"InitialPaymentDate\": \"2019-08-22\",\r
+
+      \t\t\t\"FinalPaymentDate\": \"2019-09-06\",\r
+
+      \t\t\t\"DaysPaid\": 15,\r
+
+      \t\t\t\"Issuer\": {\r
+
+      \t\t\t\t\"EmployerRegistration\": \"B5510768108\",\r
+
+      \                \"FromEmployerRfc\": \"EKU9003173C9\"\r
+
+      \t\t\t},\r
+
+      \t\t\t\"Employee\": {\r
+
+      \t\t\t\t\"Curp\": \"XEXX010101HNEXXXA4\",\r
+
+      \t\t\t\t\"SocialSecurityNumber\": \"92919084431\",\r
+
+      \t\t\t\t\"PositionRisk\": 1,\r
+
+      \t\t\t\t\"ContractType\": \"01\",\r
+
+      \t\t\t\t\"RegimeType\": \"02\",\r
+
+      \t\t\t\t\"Unionized\": false,\r
+
+      \t\t\t\t\"TypeOfJourney\": \"01\",\r
+
+      \t\t\t\t\"EmployeeNumber\": \"006\",\r
+
+      \t\t\t\t\"Department\": null,\r
+
+      \t\t\t\t\"Position\": null,\r
+
+      \t\t\t\t\"FrequencyPayment\": \"04\",\r
+
+      \t\t\t\t\"FederalEntityKey\": \"SLP\",\r
+
+      \t\t\t\t\"DailySalary\": 50.00,\r
+
+      \t\t\t\t\"StartDateLaborRelations\": \"2019-01-01\"\r
+
+      \t\t\t},\r
+
+      \t\t\t\"Perceptions\": {\r
+
+      \t\t\t\t\"Details\": [{\r
+
+      \t\t\t\t\t\"PerceptionType\": \"046\",\r
+
+      \t\t\t\t\t\"Code\": \"046\",\r
+
+      \t\t\t\t\t\"Description\": \"ASIMILIADOS A SALARIOS\",\r
+
+      \t\t\t\t\t\"TaxedAmount\": 3621.18,\r
+
+      \t\t\t\t\t\"ExemptAmount\": 0.00\r
+
+      \t\t\t\t}]\r
+
+      \t\t\t},\r
+
+      \t\t\t\"Deductions\": {\r
+
+      \t\t\t\t\"Details\": [{\r
+
+      \t\t\t\t\t\"DeduccionType\": \"002\",\r
+
+      \t\t\t\t\t\"Code\": \"002\",\r
+
+      \t\t\t\t\t\"Description\": \"ISR\",\r
+
+      \t\t\t\t\t\"Amount\": 272.60\r
+
+      \t\t\t\t}]\r
+
+      \t\t\t},\r
+
+      \t\t\t\"OtherPayments\": [{\r
+
+      \t\t\t\t\"EmploymentSubsidy\": {\r
+
+      \t\t\t\t\t\"Amount\": \"10\"\r
+
+      \t\t\t\t},\r
+
+      \t\t\t\t\"OtherPaymentType\": \"002\",\r
+
+      \t\t\t\t\"Code\": \"000\",\r
+
+      \t\t\t\t\"Description\": \"Subsidio\",\r
+
+      \t\t\t\t\"Amount\": 10\r
+
+      \t\t\t}]\r
+
+      \t\t}\r
+
+      \t}\r
+
+      }"
+  auth:
+    type: basic
+    username: sdkpruebas
+    password: "{{auth_password_0ugg}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

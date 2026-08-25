@@ -1,0 +1,55 @@
+info:
+  name: Agregar sucursal
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{SERVER}}/api/BranchOffice"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"Name\": \"El sauce\",\r
+
+      \  \"Description\": \"Sucursal del sauce, enfocada en la distribución de agua en garrafón\",\r
+
+      \  \"Address\": {\r
+
+      \    \"Street\": \"Av. del Sauce\",\r
+
+      \    \"ExteriorNumber\": \"120\",\r
+
+      \    \"InteriorNumber\": \"\",\r
+
+      \    \"Neighborhood\": \"Las Flores\",\r
+
+      \    \"ZipCode\": \"78116\",\r
+
+      \    \"Locality\": \"Localidad\",\r
+
+      \    \"Municipality\": \"San Luis Potosi\",\r
+
+      \    \"State\": \"San Luis Potosi\",\r
+
+      \    \"Country\": \"México\"\r
+
+      \  }\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

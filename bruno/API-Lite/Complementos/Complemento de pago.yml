@@ -1,0 +1,153 @@
+info:
+  name: Complemento de pago
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{SERVER}}/api-lite/3/cfdis"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"14\",\r
+
+      \    \"Folio\": \"100\",\r
+
+      \    \"Serie\": \"COP\",\r
+
+      \    \"CfdiType\": \"P\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    \"Date\": \"2023-04-18T12:55:02-06:00\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"LogoUrl\": \"http:tu_dominio.com/imagen.jpg\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    \"Issuer\": {\r
+
+      \        \"Rfc\": \"EKU9003173C9\",\r
+
+      \        \"Name\": \"ESCUELA KEMPER URGATE\",\r
+
+      \        \"FiscalRegime\": \"601\"\r
+
+      \    },\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Rfc\": \"URE180429TM6\",\r
+
+      \        \"CfdiUse\": \"CP01\",\r
+
+      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
+
+      \        \"FiscalRegime\": \"601\",\r
+
+      \        \"TaxZipCode\": \"86991\"\r
+
+      \    },\r
+
+      \    \"Complemento\": {\r
+
+      \        \"Payments\": [\r
+
+      \            {\r
+
+      \                \"Date\": \"2018-10-04\",\r
+
+      \                \"PaymentForm\": \"03\",\r
+
+      \                \"Amount\": \"116\",\r
+
+      \                \"OperationNumber\": \"126456\",\r
+
+      \                \"RelatedDocuments\": [\r
+
+      \                    {\r
+
+      \                        \"TaxObject\": \"02\",\r
+
+      \                        \"Uuid\": \"11c9536f-6bd0-4c32-9337-f8a73a15b775\",\r
+
+      \                        \"PartialityNumber\": \"1\",\r
+
+      \                        \"Serie\": \"1111\",\r
+
+      \                        \"Folio\": \"45\",\r
+
+      \                        \"Currency\": \"MXN\",\r
+
+      \                        \"PaymentMethod\": \"PPD\",\r
+
+      \                        \"PreviousBalanceAmount\": \"116\",\r
+
+      \                        \"AmountPaid\": \"111.75\",\r
+
+      \                        \"ImpSaldoInsoluto\": \"0\",\r
+
+      \                        \"Taxes\": [\r
+
+      \                            {\r
+
+      \                                \"Name\": \"IVA\",\r
+
+      \                                \"Rate\": \"0.16\",\r
+
+      \                                \"Total\": \"16\",\r
+
+      \                                \"Base\": \"100\",\r
+
+      \                                \"IsRetention\": \"false\"\r
+
+      \                            },\r
+
+      \                            {\r
+
+      \                                \"Name\": \"ISR\",\r
+
+      \                                \"Rate\": 0.0125,\r
+
+      \                                \"Total\": 1.25,\r
+
+      \                                \"Base\": 100.00,\r
+
+      \                                \"IsRetention\": true\r
+
+      \                            }\r
+
+      \                        ]\r
+
+      \                    }\r
+
+      \                ]\r
+
+      \            }\r
+
+      \        ]\r
+
+      \    }\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

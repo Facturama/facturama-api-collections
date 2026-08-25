@@ -1,0 +1,55 @@
+info:
+  name: Editar producto o servicio
+  type: http
+  seq: 12
+
+http:
+  method: PUT
+  url: "{{SERVER}}/Product/rTRHF583IKUdi3yw2sYwrw2"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"Id\": \"GY2lcfIcEWyoYYHzKsoZ2A2\",\r
+
+      \    \"UnitCode\": \"E48\",\r
+
+      \    \"Unit\": \"Servicio\",\r
+
+      \    \"IdentificationNumber\": \"WEB003\",\r
+
+      \    \"Name\": \"Sitio Web CMS\",\r
+
+      \    \"Description\": \"Desarrollo de Sitio informativo, de una paginas 333333\",\r
+
+      \    \"Category\": \"GENERAL\",\r
+
+      \    \"Code\": \"WEB003\",\r
+
+      \    \"Price\": 200.0000,\r
+
+      \    \"CodeProdServ\": \"43232408\",\r
+
+      \    \"NameCodeProdServ\": \"Software de desarrollo de plataformas web\",\r
+
+      \    \"CuentaPredial\": \"123456789\",\r
+
+      \    \"ObjetoImp\": \"01\"    \r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

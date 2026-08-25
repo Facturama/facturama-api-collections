@@ -1,0 +1,71 @@
+info:
+  name: Obtener Cfdis filtrados Completo
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{SERVER}}/cfdi?type=issuedLite&folioStart=-1&folioEnd=-1&rfc=&dateStart=&dateEnd=&status=all&OrderNumber=&taxEntityName=&idBranch=&serie=&id=&invoiceType=&paymentMethod=&rfcIssuer=&page=0"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  params:
+    - name: type
+      value: issuedLite
+      type: query
+    - name: folioStart
+      value: "-1"
+      type: query
+    - name: folioEnd
+      value: "-1"
+      type: query
+    - name: rfc
+      value: ""
+      type: query
+    - name: dateStart
+      value: ""
+      type: query
+    - name: dateEnd
+      value: ""
+      type: query
+    - name: status
+      value: all
+      type: query
+    - name: OrderNumber
+      value: ""
+      type: query
+    - name: taxEntityName
+      value: ""
+      type: query
+    - name: idBranch
+      value: ""
+      type: query
+    - name: serie
+      value: ""
+      type: query
+    - name: id
+      value: ""
+      type: query
+    - name: invoiceType
+      value: ""
+      type: query
+    - name: paymentMethod
+      value: ""
+      type: query
+    - name: rfcIssuer
+      value: ""
+      type: query
+    - name: page
+      value: "0"
+      type: query
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

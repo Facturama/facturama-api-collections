@@ -1,0 +1,51 @@
+info:
+  name: Editar cliente
+  type: http
+  seq: 11
+
+http:
+  method: PUT
+  url: "{{SERVER}}/Client/k9c0N4ImWmGhvnFPFYtU1g2"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: |-
+      {
+      	"Id":"k9c0N4ImWmGhvnFPFYtU1g2",
+      	"Rfc": "IAÑL750210963",
+          "Name": "LUIS IAN ÑUZCO",
+          "FiscalRegime": "605",
+          "Email": "soporte-api@ejemplo.mx",
+          "EmailOp1" : "Ejemplo@ejemplo.com",
+          "CfdiUse": "D01",
+          "TaxResidence": "30230",
+          "NumRegIdTrib": "131494-1055",
+          "TaxZipCode": "30230",
+          "Address": 
+      	{
+              "Street": "Calle de Pruebas",
+              "ExteriorNumber": "123",
+              "InteriorNumber": "456",
+              "Neighborhood": "COLOMBIA",
+              "ZipCode": "30230",
+              "Locality": "Chetumal",
+              "Municipality": "Othón P. Blanco",
+              "State": "Quintana Roo",
+              "Country": "Mex"
+          }
+      }
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

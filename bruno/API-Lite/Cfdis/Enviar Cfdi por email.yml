@@ -1,0 +1,48 @@
+info:
+  name: Enviar Cfdi por email
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{SERVER}}/Cfdi?cfdiType=issuedLite&cfdiId=JfDtQHaFpSy8euhsK0tXqw2&email=receptor@ejemplo.com&subject=&comments=&issuerEmail=correo_emisor@ejemplo.com"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  params:
+    - name: cfdiType
+      value: issuedLite
+      type: query
+    - name: cfdiId
+      value: JfDtQHaFpSy8euhsK0tXqw2
+      type: query
+    - name: email
+      value: receptor@ejemplo.com
+      type: query
+    - name: subject
+      value: ""
+      type: query
+    - name: comments
+      value: ""
+      type: query
+    - name: issuerEmail
+      value: correo_emisor@ejemplo.com
+      type: query
+  body:
+    type: multipart-form
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: |-
+  NOTA: El envío de Cfdi por correo, se realiza de la misma forma para API WEB y API Multiemisor
+
+  (la misma url, y el mismo formato). Pero se diferencía en el cfdiType=issuedLite

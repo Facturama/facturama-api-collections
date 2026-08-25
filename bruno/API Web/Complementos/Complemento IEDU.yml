@@ -1,0 +1,133 @@
+info:
+  name: Complemento IEDU
+  type: http
+  seq: 17
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"1\",\r
+
+      \    \"Currency\": \"MXN\",\r
+
+      \    \"Folio\": \"100\",\r
+
+      \    \"Serie\": \"CN\",\r
+
+      \    \"CfdiType\": \"I\",\r
+
+      \    \"PaymentForm\": \"03\",\r
+
+      \    \"PaymentMethod\": \"PUE\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"42501\",\r
+
+      \    \"Date\": \"2026-03-14T12:00:03\",\r
+
+      \    \"PaymentConditions\": \"CREDITO A SIETE DIAS\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    \"Issuer\": {            // Sólo necesario para API Multiemisor\r
+
+      \        \"Rfc\": \"EKU9003173C9\",\r
+
+      \        \"Name\": \"ESCUELA KEMPER URGATE\",\r
+
+      \        \"FiscalRegime\": \"601\"\r
+
+      \    },\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Rfc\": \"URE180429TM6\",\r
+
+      \        \"CfdiUse\": \"CP01\",\r
+
+      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
+
+      \        \"FiscalRegime\": \"601\",\r
+
+      \        \"TaxZipCode\": \"86991\"\r
+
+      \    },\r
+
+      \    \"Items\": [\r
+
+      \        {\r
+
+      \            \"Complement\": {\r
+
+      \                \"EducationalInstitution\": {\r
+
+      \                    \"AutRvoe\": \"234\",\r
+
+      \                    \"Curp\": \"EAPM881018HSLMLS05\",\r
+
+      \                    \"EducationLevel\": \"Profesional técnico\",\r
+
+      \                    \"StudentsName\": \"Emiliano Perez Moreno\",\r
+
+      \                    \"PaymentRfc\": \"EMPM881018837\"\r
+
+      \                }\r
+
+      \            },\r
+
+      \            \"Taxes\": [\r
+
+      \                {\r
+
+      \                    \"Base\": \"100\",\r
+
+      \                    \"IsRetention\": \"false\",\r
+
+      \                    \"Name\": \"IVA\",\r
+
+      \                    \"Rate\": \"0.16\",\r
+
+      \                    \"Total\": \"16\"\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Description\": \"Producto de prueba: Complemento IEDU\",\r
+
+      \            \"ProductCode\": \"86121503\",\r
+
+      \            \"Quantity\": \"1\",\r
+
+      \            \"Subtotal\": \"100.00\",\r
+
+      \            \"Total\": \"116.00\",\r
+
+      \            \"Unit\": \"Unidad de servicio\",\r
+
+      \            \"UnitCode\": \"E48\",\r
+
+      \            \"TaxObject\": \"02\",\r
+
+      \            \"UnitPrice\": \"100.00\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

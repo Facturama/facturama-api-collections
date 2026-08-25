@@ -1,0 +1,32 @@
+info:
+  name: Lista Paginada
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{SERVER}}/api/Clients?start=0&length=100&search="
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  params:
+    - name: start
+      value: "0"
+      type: query
+    - name: length
+      value: "100"
+      type: query
+    - name: search
+      value: ""
+      type: query
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

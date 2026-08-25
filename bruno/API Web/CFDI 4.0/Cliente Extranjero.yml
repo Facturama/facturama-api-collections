@@ -1,0 +1,123 @@
+info:
+  name: Cliente Extranjero
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"1\",\r
+
+      \    \"Folio\": \"100\",\r
+
+      \    \"Serie\": \"FAC\",\r
+
+      \    \"CfdiType\": \"I\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    \"PaymentForm\": \"03\",\r
+
+      \    \"PaymentMethod\": \"PUE\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    \"Date\": \"2024-06-25T12:00:00\",\r
+
+      \    \"PaymentConditions\": \"CREDITO A SIETE DIAS\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"CurrencyExchangeRate\": 20.55,\r
+
+      \    \"Currency\": \"USD\",\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Rfc\": \"XEXX010101000\",\r
+
+      \        \"Name\": \"Nombre cliente extranjero\",\r
+
+      \        \"CfdiUse\": \"S01\",\r
+
+      \        \"FiscalRegime\": \"616\",\r
+
+      \        \"TaxZipCode\": \"78000\",\r
+
+      \        //\"TaxRegistrationNumber\": \"123456789\", \r
+
+      \        \"TaxResidence\": \"USA\",\r
+
+      \        \"Address\": {\r
+
+      \            \"Street\": \"3495 PIEDMONT ROAD\",\r
+
+      \            \"ExteriorNumber\": \"BLDG 11\",\r
+
+      \            \"InteriorNumber\": \"SUITE 400\",\r
+
+      \            \"Neighborhood\": \"ATLANTA\",\r
+
+      \            \"Zipcode\": \"30305\",\r
+
+      \            \"State\": \"EXTRANGEROS\",\r
+
+      \            \"Country\": \"USA\"\r
+
+      \        }\r
+
+      \    },\r
+
+      \    \"Items\": [\r
+
+      \        {\r
+
+      \            \"ProductCode\": \"10101504\",\r
+
+      \            \"IdentificationNumber\": \"EDL\",\r
+
+      \            \"Description\": \"Estudios de laboratorio\",\r
+
+      \            \"Unit\": \"NO APLICA\",\r
+
+      \            \"UnitCode\": \"MTS\",\r
+
+      \            \"UnitPrice\": 50,\r
+
+      \            \"Quantity\": 2.0,\r
+
+      \            \"Subtotal\": 100,\r
+
+      \            \"TaxObject\": \"01\",\r
+
+      \            \"Total\": 100\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Ceación / Emisión

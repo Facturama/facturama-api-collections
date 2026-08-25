@@ -1,0 +1,22 @@
+info:
+  name: Descargar Retenciones
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{SERVER}}/Retenciones/9_WuOO9h1O6n_QlE0881ow2/pdf"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

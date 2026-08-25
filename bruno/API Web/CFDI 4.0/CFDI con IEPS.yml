@@ -1,0 +1,137 @@
+info:
+  name: CFDI con IEPS
+  type: http
+  seq: 25
+
+http:
+  method: POST
+  url: "{{SERVER}}/3/cfdis"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"NameId\": \"17\",\r
+
+      \    \"Currency\": \"MXN\",\r
+
+      \    \"Folio\": \"100\",\r
+
+      \    \"Serie\": \"FA\",\r
+
+      \    \"CfdiType\": \"I\",\r
+
+      \    \"PaymentForm\": \"03\",\r
+
+      \    \"PaymentMethod\": \"PUE\",\r
+
+      \    \"OrderNumber\": \"TEST-001\",\r
+
+      \    \"ExpeditionPlace\": \"78000\",\r
+
+      \    \"Date\": \"2024-06-25T12:00:00\",\r
+
+      \    \"PaymentConditions\": \"CREDITO A SIETE DIAS\",\r
+
+      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
+
+      \    \"Exportation\": \"01\",\r
+
+      \    \"Receiver\": {\r
+
+      \        \"Rfc\": \"URE180429TM6\",\r
+
+      \        \"CfdiUse\": \"G01\",\r
+
+      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
+
+      \        \"FiscalRegime\": \"601\",\r
+
+      \        \"TaxZipCode\": \"86991\"\r
+
+      \    },\r
+
+      \    \"Items\": [\r
+
+      \        {\r
+
+      \            \"Quantity\": \"1\",\r
+
+      \            \"ProductCode\": \"50181901\",\r
+
+      \            \"UnitCode\": \"H87\",\r
+
+      \            \"Unit\": \"Pieza\",\r
+
+      \            \"Description\": \"Ejemplo de producto alto en calorias con IEPS de 8% e IVA de 16%\",\r
+
+      \            \"IdentificationNumber\": \"1000123\",\r
+
+      \            \"UnitPrice\": \"54.31\",\r
+
+      \            \"Subtotal\": \"54.31\",\r
+
+      \            \"TaxObject\": \"02\",\r
+
+      \            \"Taxes\": [\r
+
+      \                {\r
+
+      \                    \"Name\": \"IVA\",\r
+
+      \                    \"Rate\": \"0.16\",\r
+
+      \                    \"Total\": \"9.384768\",\r
+
+      \                    \"Base\": \"58.6548\",\r
+
+      \                    \"IsRetention\": \"false\",\r
+
+      \                    \"IsFederalTax\": \"true\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"Name\": \"IEPS\",\r
+
+      \                    \"Rate\": \"0.08\",\r
+
+      \                    \"Total\": \"4.3448\",\r
+
+      \                    \"Base\": \"54.31\",\r
+
+      \                    \"IsRetention\": \"false\",\r
+
+      \                    \"IsFederalTax\": \"true\",\r
+
+      \                    \"IsQuota\": \"false\"\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Total\": \"68.039568\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Ceación / Emisión

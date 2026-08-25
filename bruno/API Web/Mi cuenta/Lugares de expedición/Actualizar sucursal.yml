@@ -1,0 +1,52 @@
+info:
+  name: Actualizar sucursal
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{SERVER}}/api/BranchOffice/KI2C2GeiviBPKVZRxX6GLg2"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"Id\":\"KI2C2GeiviBPKVZRxX6GLg2\",\r
+
+      \  \"Name\": \"El sauce\",\r
+
+      \  \"Description\": \"Sucursal del sauce, enfocada en la distribución de agua en garrafón\",\r
+
+      \  \"Address\": {\r
+
+      \    \"Street\": \"Av. del Sauce\",\r
+
+      \    \"ExteriorNumber\": \"120\",\r
+
+      \    \"InteriorNumber\": \"\",\r
+
+      \    \"Neighborhood\": \"Las Flores\",\r
+
+      \    \"ZipCode\": \"78116\",\r
+
+      \    \"Locality\": \"Localidad\",\r
+
+      \    \"Municipality\": \"San Luis Potosi\",\r
+
+      \    \"State\": \"San Luis Potosi\",\r
+
+      \    \"Country\": \"México\"\r
+
+      \  }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
