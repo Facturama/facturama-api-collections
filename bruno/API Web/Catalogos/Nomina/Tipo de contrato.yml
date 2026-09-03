@@ -1,0 +1,24 @@
+info:
+  name: Tipo de contrato
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{SERVER}}/catalogs/ContractTypes"
+  headers:
+    - name: User-Agent
+      value: "{{UserName}}"
+  auth:
+    type: basic
+    username: "{{UserName}}"
+    password: "{{Password}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Obtener  los códigos postales

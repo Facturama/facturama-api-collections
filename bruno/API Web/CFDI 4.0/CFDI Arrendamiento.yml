@@ -1,7 +1,7 @@
 info:
   name: CFDI Arrendamiento
   type: http
-  seq: 24
+  seq: 23
 
 http:
   method: POST

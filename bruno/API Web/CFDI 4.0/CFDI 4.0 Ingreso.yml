@@ -13,139 +13,74 @@ http:
       value: "{{UserName}}"
   body:
     type: json
-    data: "{\r
-
-      \    \"NameId\": \"1\",\r
-
-      \    \"Currency\": \"MXN\",\r
-
-      \    \"Folio\": \"100\",\r
-
-      \    \"Serie\": \"FA\",\r
-
-      \    \"CfdiType\": \"I\",\r
-
-      \    \"PaymentForm\": \"03\",\r
-
-      \    \"PaymentMethod\": \"PUE\",\r
-
-      \    \"OrderNumber\": \"TEST-001\",\r
-
-      \    \"ExpeditionPlace\": \"78000\",\r
-
-      \    \"Date\": \"2024-06-25T12:00:00\",\r
-
-      \    \"PaymentConditions\": \"CREDITO A SIETE DIAS\",\r
-
-      \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
-
-      \    \"Exportation\": \"01\",\r
-
-      \    \"Receiver\": {\r
-
-      \        \"Rfc\": \"URE180429TM6\",\r
-
-      \        \"CfdiUse\": \"G01\",\r
-
-      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
-
-      \        \"FiscalRegime\": \"601\",\r
-
-      \        \"TaxZipCode\": \"86991\"\r
-
-      \    },\r
-
-      \    \"Items\": [\r
-
-      \        {\r
-
-      \            \"ProductCode\": \"10101504\",\r
-
-      \            \"IdentificationNumber\": \"EDL\",\r
-
-      \            \"Description\": \"Estudios de laboratorio\",\r
-
-      \            \"Unit\": \"NO APLICA\",\r
-
-      \            \"UnitCode\": \"MTS\",\r
-
-      \            \"UnitPrice\": 50,\r
-
-      \            \"Quantity\": 2.0,\r
-
-      \            \"Subtotal\": 100,\r
-
-      \            \"TaxObject\": \"02\",\r
-
-      \            \"Taxes\": [\r
-
-      \                {\r
-
-      \                    \"Total\": 16,\r
-
-      \                    \"Name\": \"IVA\",\r
-
-      \                    \"Base\": 100,\r
-
-      \                    \"Rate\": 0.16,\r
-
-      \                    \"IsRetention\": false\r
-
-      \                }\r
-
-      \            ],\r
-
-      \            \"Total\": 116\r
-
-      \        },\r
-
-      \        {\r
-
-      \            \"ProductCode\": \"10101504\",\r
-
-      \            \"IdentificationNumber\": \"001\",\r
-
-      \            \"Description\": \"SERVICIO DE COLOCACION\",\r
-
-      \            \"Unit\": \"NO APLICA\",\r
-
-      \            \"UnitCode\": \"E49\",\r
-
-      \            \"UnitPrice\": 100.0,\r
-
-      \            \"Quantity\": 15.0,\r
-
-      \            \"Subtotal\": 1500.0,\r
-
-      \            \"Discount\": 0.0,\r
-
-      \            \"TaxObject\": \"02\",\r
-
-      \            \"Taxes\": [\r
-
-      \                {\r
-
-      \                    \"Total\": 240.0,\r
-
-      \                    \"Name\": \"IVA\",\r
-
-      \                    \"Base\": 1500.0,\r
-
-      \                    \"Rate\": 0.16,\r
-
-      \                    \"IsRetention\": false\r
-
-      \                }\r
-
-      \            ],\r
-
-      \            \"Total\": 1740.0\r
-
-      \        }\r
-
-      \    ]\r
-
-      }"
+    data: |-
+      {
+        "NameId": "1",
+        "Currency": "MXN",
+        "Folio": "100",
+        "Serie": "FA",
+        "CfdiType": "I",
+        "PaymentForm": "03",
+        "PaymentMethod": "PUE",
+        "OrderNumber": "TEST-001",
+        "ExpeditionPlace": "78000",
+        "Date": "2024-06-25T12:00:00",
+        "PaymentConditions": "CREDITO A SIETE DIAS",
+        "Observations": "Elemento Observaciones solo visible en PDF",
+        "Exportation": "01",
+        "Receiver": {
+          "Rfc": "URE180429TM6",
+          "CfdiUse": "G01",
+          "Name": "UNIVERSIDAD ROBOTICA ESPAÑOLA",
+          "FiscalRegime": "601",
+          "TaxZipCode": "86991"
+        },
+        "Items": [
+          {
+            "ProductCode": "10101504",
+            "IdentificationNumber": "EDL",
+            "Description": "Estudios de laboratorio",
+            "Unit": "NO APLICA",
+            "UnitCode": "MTS",
+            "UnitPrice": 50,
+            "Quantity": 2.0,
+            "Subtotal": 100,
+            "TaxObject": "02",
+            "Taxes": [
+              {
+                "Total": 16,
+                "Name": "IVA",
+                "Base": 100,
+                "Rate": 0.16,
+                "IsRetention": false
+              }
+            ],
+            "Total": 116
+          },
+          {
+            "ProductCode": "10101504",
+            "IdentificationNumber": "001",
+            "Description": "SERVICIO DE COLOCACION",
+            "Unit": "NO APLICA",
+            "UnitCode": "E49",
+            "UnitPrice": 100.0,
+            "Quantity": 15.0,
+            "Subtotal": 1500.0,
+            "Discount": 0.0,
+            "TaxObject": "02",
+            "Taxes": [
+              {
+                "Total": 240.0,
+                "Name": "IVA",
+                "Base": 1500.0,
+                "Rate": 0.16,
+                "IsRetention": false
+              }
+            ],
+            "Total": 1740.0
+          }
+        ]
+      }
   auth:
     type: basic
     username: "{{UserName}}"

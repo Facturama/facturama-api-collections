@@ -1,7 +1,7 @@
 info:
   name: A cuenta de terceros
   type: http
-  seq: 29
+  seq: 28
 
 http:
   method: POST

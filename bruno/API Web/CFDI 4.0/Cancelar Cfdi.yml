@@ -1,7 +1,7 @@
 info:
   name: Cancelar Cfdi
   type: http
-  seq: 28
+  seq: 27
 
 http:
   method: DELETE

@@ -1,7 +1,7 @@
 info:
   name: CFDI en Dolares
   type: http
-  seq: 26
+  seq: 25
 
 http:
   method: POST

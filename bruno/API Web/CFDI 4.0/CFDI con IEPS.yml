@@ -1,7 +1,7 @@
 info:
   name: CFDI con IEPS
   type: http
-  seq: 25
+  seq: 24
 
 http:
   method: POST
