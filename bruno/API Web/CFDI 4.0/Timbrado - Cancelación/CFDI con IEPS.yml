@@ -1,7 +1,7 @@
 info:
-  name: CFDI Arrendamiento
+  name: CFDI con IEPS
   type: http
-  seq: 23
+  seq: 1
 
 http:
   method: POST
@@ -15,13 +15,13 @@ http:
     type: json
     data: "{\r
 
-      \    \"NameId\": \"10\",\r
+      \    \"NameId\": \"17\",\r
 
       \    \"Currency\": \"MXN\",\r
 
       \    \"Folio\": \"100\",\r
 
-      \    \"Serie\": \"FAC\",\r
+      \    \"Serie\": \"FA\",\r
 
       \    \"CfdiType\": \"I\",\r
 
@@ -35,7 +35,7 @@ http:
 
       \    \"Date\": \"2024-06-25T12:00:00\",\r
 
-      \    \"PaymentConditions\": \"CFDI de Arrendamiento\",\r
+      \    \"PaymentConditions\": \"CREDITO A SIETE DIAS\",\r
 
       \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
 
@@ -59,21 +59,21 @@ http:
 
       \        {\r
 
-      \            \"ProductCode\": \"80131500\",\r
+      \            \"Quantity\": \"1\",\r
 
-      \            \"IdentificationNumber\": \"Renta2023\",\r
+      \            \"ProductCode\": \"50181901\",\r
 
-      \            \"Description\": \"renta Mensual\",\r
+      \            \"UnitCode\": \"H87\",\r
 
-      \            \"Unit\": \"Unidad de servicio\",\r
+      \            \"Unit\": \"Pieza\",\r
 
-      \            \"UnitCode\": \"E48\",\r
+      \            \"Description\": \"Ejemplo de producto alto en calorias con IEPS de 8% e IVA de 16%\",\r
 
-      \            \"UnitPrice\": 1500,\r
+      \            \"IdentificationNumber\": \"1000123\",\r
 
-      \            \"Quantity\": 1.0,\r
+      \            \"UnitPrice\": \"54.31\",\r
 
-      \            \"Subtotal\": 1500,\r
+      \            \"Subtotal\": \"54.31\",\r
 
       \            \"TaxObject\": \"02\",\r
 
@@ -81,27 +81,41 @@ http:
 
       \                {\r
 
-      \                    \"Total\": 240,\r
-
       \                    \"Name\": \"IVA\",\r
 
-      \                    \"Base\": 1500,\r
+      \                    \"Rate\": \"0.16\",\r
 
-      \                    \"Rate\": 0.16,\r
+      \                    \"Total\": \"9.384768\",\r
 
-      \                    \"IsRetention\": false\r
+      \                    \"Base\": \"58.6548\",\r
+
+      \                    \"IsRetention\": \"false\",\r
+
+      \                    \"IsFederalTax\": \"true\"\r
+
+      \                },\r
+
+      \                {\r
+
+      \                    \"Name\": \"IEPS\",\r
+
+      \                    \"Rate\": \"0.08\",\r
+
+      \                    \"Total\": \"4.3448\",\r
+
+      \                    \"Base\": \"54.31\",\r
+
+      \                    \"IsRetention\": \"false\",\r
+
+      \                    \"IsFederalTax\": \"true\",\r
+
+      \                    \"IsQuota\": \"false\"\r
 
       \                }\r
 
       \            ],\r
 
-      \            \"Total\": 1740.00,\r
-
-      \            \"PropertyTaxIDNumber\": [\r
-
-      \                \"123456789\"\r
-
-      \            ]\r
+      \            \"Total\": \"68.039568\"\r
 
       \        }\r
 

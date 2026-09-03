@@ -1,7 +1,7 @@
 info:
-  name: Factura Global
+  name: CFDI 4.0 ISR
   type: http
-  seq: 9
+  seq: 1
 
 http:
   method: POST
@@ -15,15 +15,15 @@ http:
     type: json
     data: "{\r
 
-      \    \"NameId\": \"34\",\r
+      \    \"NameId\": \"1\",\r
+
+      \    \"Currency\": \"MXN\",\r
 
       \    \"Folio\": \"100\",\r
 
       \    \"Serie\": \"FAC\",\r
 
       \    \"CfdiType\": \"I\",\r
-
-      \    \"Currency\": \"MXN\",\r
 
       \    \"PaymentForm\": \"03\",\r
 
@@ -41,27 +41,17 @@ http:
 
       \    \"Exportation\": \"01\",\r
 
-      \    \"GlobalInformation\": {\r
-
-      \        \"Periodicity\": \"04\",\r
-
-      \        \"Months\": \"04\",\r
-
-      \        \"Year\": \"2024\"\r
-
-      \    },\r
-
       \    \"Receiver\": {\r
 
-      \        \"Rfc\": \"XAXX010101000\",\r
+      \        \"Rfc\": \"URE180429TM6\",\r
 
-      \        \"Name\": \"PUBLICO EN GENERAL\",\r
+      \        \"CfdiUse\": \"G01\",\r
 
-      \        \"CfdiUse\": \"S01\",\r
+      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
 
-      \        \"TaxZipCode\": \"78000\",\r
+      \        \"FiscalRegime\": \"601\",\r
 
-      \        \"FiscalRegime\": \"616\"\r
+      \        \"TaxZipCode\": \"86991\"\r
 
       \    },\r
 
@@ -91,6 +81,20 @@ http:
 
       \                {\r
 
+      \                    \"Total\": 1.25,\r
+
+      \                    \"Name\": \"ISR\",\r
+
+      \                    \"Base\": 100,\r
+
+      \                    \"Rate\": 0.0125,\r
+
+      \                    \"IsRetention\": true\r
+
+      \                },\r
+
+      \                {\r
+
       \                    \"Total\": 16,\r
 
       \                    \"Name\": \"IVA\",\r
@@ -103,11 +107,15 @@ http:
 
       \                }\r
 
+      \r
+
       \            ],\r
 
-      \            \"Total\": 116\r
+      \            \"Total\": 114.75\r
 
       \        }\r
+
+      \        \r
 
       \    ]\r
 

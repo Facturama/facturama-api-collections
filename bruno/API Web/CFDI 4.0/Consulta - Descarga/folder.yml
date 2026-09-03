@@ -1,0 +1,7 @@
+info:
+  name: Consulta / Descarga
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit

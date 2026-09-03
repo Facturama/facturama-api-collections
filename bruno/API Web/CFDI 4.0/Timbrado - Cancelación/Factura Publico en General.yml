@@ -1,7 +1,7 @@
 info:
-  name: CFDI 4.0 impuesto local
+  name: Factura Publico en General
   type: http
-  seq: 18
+  seq: 2
 
 http:
   method: POST
@@ -13,17 +13,17 @@ http:
       value: "{{UserName}}"
   body:
     type: json
-    data: "{\r
+    data: "{    \r
 
       \    \"NameId\": \"1\",\r
 
-      \    \"Currency\": \"MXN\",\r
-
       \    \"Folio\": \"100\",\r
 
-      \    \"Serie\": \"FAC\",\r
+      \    \"Serie\": \"FA\",\r
 
       \    \"CfdiType\": \"I\",\r
+
+      \    \"Currency\": \"MXN\",\r
 
       \    \"PaymentForm\": \"03\",\r
 
@@ -33,7 +33,7 @@ http:
 
       \    \"ExpeditionPlace\": \"78000\",\r
 
-      \    //\"Date\": \"2024-06-25T12:00:00\",\r
+      \    \"Date\": \"2024-06-25T12:00:00\",\r
 
       \    \"PaymentConditions\": \"CREDITO A SIETE DIAS\",\r
 
@@ -43,15 +43,15 @@ http:
 
       \    \"Receiver\": {\r
 
-      \        \"Rfc\": \"URE180429TM6\",\r
+      \        \"Rfc\": \"XAXX010101000\",\r
 
-      \        \"CfdiUse\": \"G01\",\r
+      \        \"Name\": \"PÚBLICO EN GENERAL\",\r
 
-      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
+      \        \"CfdiUse\": \"S01\",\r
 
-      \        \"FiscalRegime\": \"601\",\r
+      \        \"TaxZipCode\": \"78000\",\r
 
-      \        \"TaxZipCode\": \"86991\"\r
+      \        \"FiscalRegime\": \"616\"\r
 
       \    },\r
 
@@ -81,20 +81,6 @@ http:
 
       \                {\r
 
-      \                    \"Total\": 1,\r
-
-      \                    \"Name\": \"CEDULAR\",\r
-
-      \                    \"Base\": 100,\r
-
-      \                    \"Rate\": 0.01,\r
-
-      \                    \"IsRetention\": true\r
-
-      \                },\r
-
-      \                                {\r
-
       \                    \"Total\": 16,\r
 
       \                    \"Name\": \"IVA\",\r
@@ -107,15 +93,55 @@ http:
 
       \                }\r
 
-      \r
+      \            ],\r
+
+      \            \"Total\": 116\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"ProductCode\": \"10101504\",\r
+
+      \            \"IdentificationNumber\": \"001\",\r
+
+      \            \"Description\": \"SERVICIO DE COLOCACION\",\r
+
+      \            \"Unit\": \"NO APLICA\",\r
+
+      \            \"UnitCode\": \"E49\",\r
+
+      \            \"UnitPrice\": 100.0,\r
+
+      \            \"Quantity\": 15.0,\r
+
+      \            \"Subtotal\": 1500.0,\r
+
+      \            \"Discount\": 0.0,\r
+
+      \            \"TaxObject\": \"02\",\r
+
+      \            \"Taxes\": [\r
+
+      \                {\r
+
+      \                    \"Total\": 240.0,\r
+
+      \                    \"Name\": \"IVA\",\r
+
+      \                    \"Base\": 1500.0,\r
+
+      \                    \"Rate\": 0.16,\r
+
+      \                    \"IsRetention\": false\r
+
+      \                }\r
 
       \            ],\r
 
-      \            \"Total\": 115\r
+      \            \"Total\": 1740.0\r
 
       \        }\r
-
-      \       \r
 
       \    ]\r
 

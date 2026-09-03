@@ -1,7 +1,7 @@
 info:
   name: CFDI 4.0 Ingreso
   type: http
-  seq: 15
+  seq: 1
 
 http:
   method: POST

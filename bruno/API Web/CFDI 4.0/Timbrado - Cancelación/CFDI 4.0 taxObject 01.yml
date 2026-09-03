@@ -1,7 +1,7 @@
 info:
-  name: CFDI en Dolares
+  name: CFDI 4.0 taxObject 01
   type: http
-  seq: 25
+  seq: 1
 
 http:
   method: POST
@@ -17,13 +17,13 @@ http:
 
       \    \"NameId\": \"1\",\r
 
+      \    \"Currency\": \"MXN\",\r
+
       \    \"Folio\": \"100\",\r
 
       \    \"Serie\": \"FAC\",\r
 
       \    \"CfdiType\": \"I\",\r
-
-      \    \"Exportation\": \"01\",\r
 
       \    \"PaymentForm\": \"03\",\r
 
@@ -39,9 +39,7 @@ http:
 
       \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
 
-      \    \"CurrencyExchangeRate\": 20.55,\r
-
-      \    \"Currency\": \"USD\",\r
+      \    \"Exportation\": \"01\",\r
 
       \    \"Receiver\": {\r
 
@@ -77,73 +75,13 @@ http:
 
       \            \"Subtotal\": 100,\r
 
-      \            \"TaxObject\": \"02\",\r
+      \            \"TaxObject\": \"01\",            \r
 
-      \            \"Taxes\": [\r
-
-      \                {\r
-
-      \                    \"Total\": 16,\r
-
-      \                    \"Name\": \"IVA\",\r
-
-      \                    \"Base\": 100,\r
-
-      \                    \"Rate\": 0.16,\r
-
-      \                    \"IsRetention\": false\r
-
-      \                }\r
-
-      \            ],\r
-
-      \            \"Total\": 116\r
-
-      \        },\r
-
-      \        {\r
-
-      \            \"ProductCode\": \"10101504\",\r
-
-      \            \"IdentificationNumber\": \"001\",\r
-
-      \            \"Description\": \"SERVICIO DE COLOCACION\",\r
-
-      \            \"Unit\": \"NO APLICA\",\r
-
-      \            \"UnitCode\": \"E49\",\r
-
-      \            \"UnitPrice\": 100.0,\r
-
-      \            \"Quantity\": 15.0,\r
-
-      \            \"Subtotal\": 1500.0,\r
-
-      \            \"Discount\": 0.0,\r
-
-      \            \"TaxObject\": \"02\",\r
-
-      \            \"Taxes\": [\r
-
-      \                {\r
-
-      \                    \"Total\": 240.0,\r
-
-      \                    \"Name\": \"IVA\",\r
-
-      \                    \"Base\": 1500.0,\r
-
-      \                    \"Rate\": 0.16,\r
-
-      \                    \"IsRetention\": false\r
-
-      \                }\r
-
-      \            ],\r
-
-      \            \"Total\": 1740.0\r
+      \            \"Total\": 100\r
 
       \        }\r
+
+      \        \r
 
       \    ]\r
 

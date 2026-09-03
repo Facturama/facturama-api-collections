@@ -1,7 +1,7 @@
 info:
-  name: Cuenta Predial
+  name: CFDI 4.0 impuesto local
   type: http
-  seq: 12
+  seq: 1
 
 http:
   method: POST
@@ -33,7 +33,7 @@ http:
 
       \    \"ExpeditionPlace\": \"78000\",\r
 
-      \    \"Date\": \"2024-06-25T12:00:00\",\r
+      \    //\"Date\": \"2024-06-25T12:00:00\",\r
 
       \    \"PaymentConditions\": \"CREDITO A SIETE DIAS\",\r
 
@@ -45,7 +45,7 @@ http:
 
       \        \"Rfc\": \"URE180429TM6\",\r
 
-      \        \"CfdiUse\": \"CP01\",\r
+      \        \"CfdiUse\": \"G01\",\r
 
       \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
 
@@ -81,6 +81,20 @@ http:
 
       \                {\r
 
+      \                    \"Total\": 1,\r
+
+      \                    \"Name\": \"CEDULAR\",\r
+
+      \                    \"Base\": 100,\r
+
+      \                    \"Rate\": 0.01,\r
+
+      \                    \"IsRetention\": true\r
+
+      \                },\r
+
+      \                                {\r
+
       \                    \"Total\": 16,\r
 
       \                    \"Name\": \"IVA\",\r
@@ -93,17 +107,15 @@ http:
 
       \                }\r
 
+      \r
+
       \            ],\r
 
-      \            \"Total\": 116,\r
-
-      \            \"PropertyTaxIDNumber\": [\r
-
-      \                \"123456789\"\r
-
-      \            ]\r
+      \            \"Total\": 115\r
 
       \        }\r
+
+      \       \r
 
       \    ]\r
 

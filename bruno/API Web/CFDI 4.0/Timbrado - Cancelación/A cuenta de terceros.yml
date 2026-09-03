@@ -1,7 +1,7 @@
 info:
-  name: CFDI 4.0 ISR
+  name: A cuenta de terceros
   type: http
-  seq: 22
+  seq: 1
 
 http:
   method: POST
@@ -15,15 +15,15 @@ http:
     type: json
     data: "{\r
 
-      \    \"NameId\": \"1\",\r
-
-      \    \"Currency\": \"MXN\",\r
+      \    \"NameId\": \"29\",\r
 
       \    \"Folio\": \"100\",\r
 
-      \    \"Serie\": \"FAC\",\r
+      \    \"Serie\": \"FA\",\r
 
       \    \"CfdiType\": \"I\",\r
+
+      \    \"Currency\": \"MXN\",\r
 
       \    \"PaymentForm\": \"03\",\r
 
@@ -81,20 +81,6 @@ http:
 
       \                {\r
 
-      \                    \"Total\": 1.25,\r
-
-      \                    \"Name\": \"ISR\",\r
-
-      \                    \"Base\": 100,\r
-
-      \                    \"Rate\": 0.0125,\r
-
-      \                    \"IsRetention\": true\r
-
-      \                },\r
-
-      \                {\r
-
       \                    \"Total\": 16,\r
 
       \                    \"Name\": \"IVA\",\r
@@ -107,15 +93,67 @@ http:
 
       \                }\r
 
-      \r
+      \            ],\r
+
+      \            \"Total\": 116,\r
+
+      \            \"ThirdPartyAccount\": {\r
+
+      \                \"Rfc\": \"CACX7605101P8\",\r
+
+      \                \"Name\": \"XOCHILT CASAS CHAVEZ\",\r
+
+      \                \"FiscalRegime\": \"616\",\r
+
+      \                \"TaxZipCode\": \"36257\"\r
+
+      \            }\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"ProductCode\": \"10101504\",\r
+
+      \            \"IdentificationNumber\": \"001\",\r
+
+      \            \"Description\": \"SERVICIO DE COLOCACION\",\r
+
+      \            \"Unit\": \"NO APLICA\",\r
+
+      \            \"UnitCode\": \"E49\",\r
+
+      \            \"UnitPrice\": 100.0,\r
+
+      \            \"Quantity\": 15.0,\r
+
+      \            \"Subtotal\": 1500.0,\r
+
+      \            \"Discount\": 0.0,\r
+
+      \            \"TaxObject\": \"02\",\r
+
+      \            \"Taxes\": [\r
+
+      \                {\r
+
+      \                    \"Total\": 240.0,\r
+
+      \                    \"Name\": \"IVA\",\r
+
+      \                    \"Base\": 1500.0,\r
+
+      \                    \"Rate\": 0.16,\r
+
+      \                    \"IsRetention\": false\r
+
+      \                }\r
 
       \            ],\r
 
-      \            \"Total\": 114.75\r
+      \            \"Total\": 1740.0\r
 
       \        }\r
-
-      \        \r
 
       \    ]\r
 

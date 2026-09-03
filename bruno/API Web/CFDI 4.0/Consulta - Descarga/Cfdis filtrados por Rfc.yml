@@ -1,27 +1,24 @@
 info:
-  name: Cancelar Cfdi
+  name: Cfdis filtrados por Rfc
   type: http
-  seq: 27
+  seq: 1
 
 http:
-  method: DELETE
-  url: "{{SERVER}}/Cfdi/_l0qPog2qSpryRUq1qfCrg2?type=issued&motive=02"
+  method: GET
+  url: "{{SERVER}}/cfdi?type=Issued&status=Active&rfc=XAXX010101000"
   headers:
     - name: User-Agent
       value: "{{UserName}}"
   params:
     - name: type
-      value: issued
+      value: Issued
       type: query
-    - name: motive
-      value: "02"
+    - name: status
+      value: Active
       type: query
-    - name: uuidReplacement
-      value: ""
+    - name: rfc
+      value: XAXX010101000
       type: query
-      disabled: true
-  body:
-    type: multipart-form
   auth:
     type: basic
     username: "{{UserName}}"
@@ -33,5 +30,3 @@ settings:
   followRedirects: true
   maxRedirects: 5
   forwardAuthorizationHeader: false
-
-docs: Los CFDI no se pueden eliminar, solo se cancelan

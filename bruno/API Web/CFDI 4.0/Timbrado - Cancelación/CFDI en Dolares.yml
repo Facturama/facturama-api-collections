@@ -1,7 +1,7 @@
 info:
-  name: Factura Publico en General
+  name: CFDI en Dolares
   type: http
-  seq: 10
+  seq: 1
 
 http:
   method: POST
@@ -13,17 +13,17 @@ http:
       value: "{{UserName}}"
   body:
     type: json
-    data: "{    \r
+    data: "{\r
 
       \    \"NameId\": \"1\",\r
 
       \    \"Folio\": \"100\",\r
 
-      \    \"Serie\": \"FA\",\r
+      \    \"Serie\": \"FAC\",\r
 
       \    \"CfdiType\": \"I\",\r
 
-      \    \"Currency\": \"MXN\",\r
+      \    \"Exportation\": \"01\",\r
 
       \    \"PaymentForm\": \"03\",\r
 
@@ -39,19 +39,21 @@ http:
 
       \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
 
-      \    \"Exportation\": \"01\",\r
+      \    \"CurrencyExchangeRate\": 20.55,\r
+
+      \    \"Currency\": \"USD\",\r
 
       \    \"Receiver\": {\r
 
-      \        \"Rfc\": \"XAXX010101000\",\r
+      \        \"Rfc\": \"URE180429TM6\",\r
 
-      \        \"Name\": \"PÚBLICO EN GENERAL\",\r
+      \        \"CfdiUse\": \"G01\",\r
 
-      \        \"CfdiUse\": \"S01\",\r
+      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
 
-      \        \"TaxZipCode\": \"78000\",\r
+      \        \"FiscalRegime\": \"601\",\r
 
-      \        \"FiscalRegime\": \"616\"\r
+      \        \"TaxZipCode\": \"86991\"\r
 
       \    },\r
 

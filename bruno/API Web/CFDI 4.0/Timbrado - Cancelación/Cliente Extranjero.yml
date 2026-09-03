@@ -1,7 +1,7 @@
 info:
-  name: CFDI IVA tasas cero
+  name: Cliente Extranjero
   type: http
-  seq: 21
+  seq: 1
 
 http:
   method: POST
@@ -17,13 +17,13 @@ http:
 
       \    \"NameId\": \"1\",\r
 
-      \    \"Currency\": \"MXN\",\r
-
       \    \"Folio\": \"100\",\r
 
       \    \"Serie\": \"FAC\",\r
 
       \    \"CfdiType\": \"I\",\r
+
+      \    \"Exportation\": \"01\",\r
 
       \    \"PaymentForm\": \"03\",\r
 
@@ -39,19 +39,43 @@ http:
 
       \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
 
-      \    \"Exportation\": \"01\",\r
+      \    \"CurrencyExchangeRate\": 20.55,\r
+
+      \    \"Currency\": \"USD\",\r
 
       \    \"Receiver\": {\r
 
-      \        \"Rfc\": \"URE180429TM6\",\r
+      \        \"Rfc\": \"XEXX010101000\",\r
 
-      \        \"CfdiUse\": \"G01\",\r
+      \        \"Name\": \"Nombre cliente extranjero\",\r
 
-      \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
+      \        \"CfdiUse\": \"S01\",\r
 
-      \        \"FiscalRegime\": \"601\",\r
+      \        \"FiscalRegime\": \"616\",\r
 
-      \        \"TaxZipCode\": \"86991\"\r
+      \        \"TaxZipCode\": \"78000\",\r
+
+      \        //\"TaxRegistrationNumber\": \"123456789\", \r
+
+      \        \"TaxResidence\": \"USA\",\r
+
+      \        \"Address\": {\r
+
+      \            \"Street\": \"3495 PIEDMONT ROAD\",\r
+
+      \            \"ExteriorNumber\": \"BLDG 11\",\r
+
+      \            \"InteriorNumber\": \"SUITE 400\",\r
+
+      \            \"Neighborhood\": \"ATLANTA\",\r
+
+      \            \"Zipcode\": \"30305\",\r
+
+      \            \"State\": \"EXTRANGEROS\",\r
+
+      \            \"Country\": \"USA\"\r
+
+      \        }\r
 
       \    },\r
 
@@ -75,29 +99,9 @@ http:
 
       \            \"Subtotal\": 100,\r
 
-      \            \"TaxObject\": \"02\",\r
+      \            \"TaxObject\": \"01\",\r
 
-      \            \"Taxes\": [\r
-
-      \                {\r
-
-      \                    \"Name\": \"IVA\",\r
-
-      \                    \"Rate\": 0.0,\r
-
-      \                    \"Total\": 0.0,\r
-
-      \                    \"Base\": 100,\r
-
-      \                    \"IsRetention\": \"false\",\r
-
-      \                    \"IsFederalTax\": \"true\"\r
-
-      \                }                 \r
-
-      \            ],\r
-
-      \            \"Total\": 100.00\r
+      \            \"Total\": 100\r
 
       \        }\r
 

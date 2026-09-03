@@ -1,7 +1,7 @@
 info:
-  name: Cliente Extranjero
+  name: Factura Global
   type: http
-  seq: 13
+  seq: 1
 
 http:
   method: POST
@@ -15,7 +15,7 @@ http:
     type: json
     data: "{\r
 
-      \    \"NameId\": \"1\",\r
+      \    \"NameId\": \"34\",\r
 
       \    \"Folio\": \"100\",\r
 
@@ -23,7 +23,7 @@ http:
 
       \    \"CfdiType\": \"I\",\r
 
-      \    \"Exportation\": \"01\",\r
+      \    \"Currency\": \"MXN\",\r
 
       \    \"PaymentForm\": \"03\",\r
 
@@ -39,43 +39,29 @@ http:
 
       \    \"Observations\": \"Elemento Observaciones solo visible en PDF\",\r
 
-      \    \"CurrencyExchangeRate\": 20.55,\r
+      \    \"Exportation\": \"01\",\r
 
-      \    \"Currency\": \"USD\",\r
+      \    \"GlobalInformation\": {\r
+
+      \        \"Periodicity\": \"04\",\r
+
+      \        \"Months\": \"04\",\r
+
+      \        \"Year\": \"2024\"\r
+
+      \    },\r
 
       \    \"Receiver\": {\r
 
-      \        \"Rfc\": \"XEXX010101000\",\r
+      \        \"Rfc\": \"XAXX010101000\",\r
 
-      \        \"Name\": \"Nombre cliente extranjero\",\r
+      \        \"Name\": \"PUBLICO EN GENERAL\",\r
 
       \        \"CfdiUse\": \"S01\",\r
 
-      \        \"FiscalRegime\": \"616\",\r
-
       \        \"TaxZipCode\": \"78000\",\r
 
-      \        //\"TaxRegistrationNumber\": \"123456789\", \r
-
-      \        \"TaxResidence\": \"USA\",\r
-
-      \        \"Address\": {\r
-
-      \            \"Street\": \"3495 PIEDMONT ROAD\",\r
-
-      \            \"ExteriorNumber\": \"BLDG 11\",\r
-
-      \            \"InteriorNumber\": \"SUITE 400\",\r
-
-      \            \"Neighborhood\": \"ATLANTA\",\r
-
-      \            \"Zipcode\": \"30305\",\r
-
-      \            \"State\": \"EXTRANGEROS\",\r
-
-      \            \"Country\": \"USA\"\r
-
-      \        }\r
+      \        \"FiscalRegime\": \"616\"\r
 
       \    },\r
 
@@ -99,9 +85,27 @@ http:
 
       \            \"Subtotal\": 100,\r
 
-      \            \"TaxObject\": \"01\",\r
+      \            \"TaxObject\": \"02\",\r
 
-      \            \"Total\": 100\r
+      \            \"Taxes\": [\r
+
+      \                {\r
+
+      \                    \"Total\": 16,\r
+
+      \                    \"Name\": \"IVA\",\r
+
+      \                    \"Base\": 100,\r
+
+      \                    \"Rate\": 0.16,\r
+
+      \                    \"IsRetention\": false\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Total\": 116\r
 
       \        }\r
 

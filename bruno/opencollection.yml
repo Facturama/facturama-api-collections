@@ -2,7 +2,7 @@ opencollection: 1.0.0
 
 info:
   name: FacturamaAPI
-  version: 1.0.0
+  version: 1.0.1
 config:
   proxy:
     inherit: true

@@ -1,7 +1,7 @@
 info:
-  name: CFDI 4.0 taxObject 01
+  name: Numero de Pedimento
   type: http
-  seq: 20
+  seq: 1
 
 http:
   method: POST
@@ -21,7 +21,7 @@ http:
 
       \    \"Folio\": \"100\",\r
 
-      \    \"Serie\": \"FAC\",\r
+      \    \"Serie\": \"FA\",\r
 
       \    \"CfdiType\": \"I\",\r
 
@@ -45,7 +45,7 @@ http:
 
       \        \"Rfc\": \"URE180429TM6\",\r
 
-      \        \"CfdiUse\": \"G01\",\r
+      \        \"CfdiUse\": \"CP01\",\r
 
       \        \"Name\": \"UNIVERSIDAD ROBOTICA ESPAÑOLA\",\r
 
@@ -75,13 +75,37 @@ http:
 
       \            \"Subtotal\": 100,\r
 
-      \            \"TaxObject\": \"01\",            \r
+      \            \"TaxObject\": \"02\",\r
 
-      \            \"Total\": 100\r
+      \            \"Taxes\": [\r
+
+      \                {\r
+
+      \                    \"Total\": 16,\r
+
+      \                    \"Name\": \"IVA\",\r
+
+      \                    \"Base\": 100,\r
+
+      \                    \"Rate\": 0.16,\r
+
+      \                    \"IsRetention\": false\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"Total\": 116,\r
+
+      \            \"NumerosPedimento\": [\r
+
+      \                \"21  47  3807  8003832\",\r
+
+      \                \"21  47  3807  8003832\"\r
+
+      \            ]\r
 
       \        }\r
-
-      \        \r
 
       \    ]\r
 
